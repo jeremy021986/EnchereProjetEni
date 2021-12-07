@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 public class ConnectionProvider {
 	
 	private static final String POOL_RACINE_JNDI = "java:comp/env/";
-	private static final String POOL_NOM_JNDI = "jdbc/suiviRepasPool";// <-- seul ceci change entre 2 applications
+	private static final String POOL_NOM_JNDI = "jdbc/encheresPool";// <-- seul ceci change entre 2 applications
 	
 	private static DataSource dataSource ; /// pool de connexions auquel demander les connexions
 	
