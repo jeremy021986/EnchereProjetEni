@@ -4,8 +4,6 @@ import java.time.LocalDateTime;
 
 public class Article {
 	
-		prinva
-
 	
 		private int idArticle;
 
