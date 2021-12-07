@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Liste des enchére</title>
+<title>Liste des enchères</title>
 </head>
 <body>
 
