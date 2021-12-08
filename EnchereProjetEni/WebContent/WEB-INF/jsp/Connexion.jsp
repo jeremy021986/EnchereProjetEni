@@ -11,23 +11,26 @@
 </head>
 <body>
 <h1> ENI-Encheres</h1>
+<form action="./PageConnexion" method="post" >
+    <label for="id" >Identifiant</label>
+    <br>
+    <input type="text" id="nombre" name="identifiant"  />
+    <br>
+    <label for="id" >Mot de passe</label>
+    <br>
+    <input type="text" id="nombre" name="motdepasse"  />
+    <br>
+    <button type="submit">Connexion</button>
+    
+</form>
+<div>
+    <input type="checkbox" id="scales" name="scales"
+           checked>
+    <label for="scales">Se souvenir de moi</label>
+  </div>
+  
+<a href="https://example.com">Mot de passe oublié</a>
+<a href="PageInscription"><button type="submit" class="btn btn-primary">Créer un compte</button></a>
 
-	<div>
-		<form action="<c:url value="/Connexion" /> method="post">
-		    <label for="email">Email:</label>
-            <input name="email" size="30" />
-            <br><br>
-            <label for="mot_de_passe">Mot de passe:</label>
-            <input type="password" name="password" size="30" />
-            <br>${message}
-            <br><br>           
-            <button type="submit">Connexion</button>
-        </form>
-    </div>
 </body>
 </html>
-	
-
-
-
-

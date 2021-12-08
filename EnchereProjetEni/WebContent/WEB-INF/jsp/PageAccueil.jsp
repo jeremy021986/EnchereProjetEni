@@ -12,7 +12,7 @@
 <body>
 <h1> ENI-Encheres</h1>
 <div>
-<a href="<c:url value="PageConnexion"></c:url>"><button type="submit">s'inscrire ce connecter</button></a>
+<a href="PageConnexion"><button type="submit" class="btn btn-primary">s'inscrire ce connecter</button></a>
 </div>
 <p>Liste des enchères</p>
 <p> Filtres :</p>

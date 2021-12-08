@@ -10,26 +10,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class PageConnexionServlet
+ * Servlet implementation class PageInscriptionServlet
  */
-@WebServlet(description = "PageConnexion", urlPatterns = { "/PageConnexion" })
-public class PageConnexionServlet extends HttpServlet {
+@WebServlet(description = "PageInscriptionServlet", urlPatterns = { "/PageInscription" })
+public class PageInscriptionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/Connexion.jsp").forward(request, response);
-	}
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.sendRedirect("./PagePrincipale");
 		
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/Inscription.jsp");
+		dispatcher.forward(request, response);
 	}
 
 
