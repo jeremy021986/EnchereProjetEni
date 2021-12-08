@@ -24,9 +24,16 @@ public class PageInscriptionServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/Inscription.jsp");
-		dispatcher.forward(request, response);
+	
+		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/Inscription.jsp").forward(request, response);
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.sendRedirect("./PagePrincipale");
+	}
 
 }
