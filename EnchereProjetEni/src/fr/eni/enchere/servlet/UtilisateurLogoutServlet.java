@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class UtilisateurLogoutServlet
  */
-@WebServlet(description = "deconnexion", urlPatterns = { "/deconnexion" })
+@WebServlet(description = "Deconnexion", urlPatterns = { "/Deconnexion" })
 public class UtilisateurLogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
