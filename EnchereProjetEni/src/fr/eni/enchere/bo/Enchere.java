@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class Enchere {
 
 	
-		private Article article;
+		private ArticleVendu article;
 		
 		private Utilisateur utilisateur;
 		
@@ -13,12 +13,12 @@ public class Enchere {
 		
 		private int montantEnchere;
 		
-		public Article getArticle() {
+		public ArticleVendu getArticle() {
 			return article;
 		}
 
 		
-		public void setArticle(Article article) {
+		public void setArticle(ArticleVendu article) {
 			this.article = article;
 		}
 

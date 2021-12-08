@@ -18,7 +18,7 @@ public class Utilisateur {
 	    private boolean administrateur;
 	    
 	    private List<Enchere> encheres;
-	    private List<Article> articles;
+	    private List<ArticleVendu> articles;
 	    
 		
 		
@@ -127,11 +127,11 @@ public class Utilisateur {
 			this.encheres = encheres;
 		}
 		
-		public List<Article> getArticles() {
+		public List<ArticleVendu> getArticles() {
 			return articles;
 		}
 		
-		public void setArticles(List<Article> articles) {
+		public void setArticles(List<ArticleVendu> articles) {
 			this.articles = articles;
 		}
 		

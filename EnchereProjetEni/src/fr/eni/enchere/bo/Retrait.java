@@ -2,16 +2,16 @@ package fr.eni.enchere.bo;
 
 public class Retrait {
 		
-		private Article article;
+		private ArticleVendu article;
 		private String rue;
 		private String codePostal;
 		private String ville;
 		
-		public Article getArticle() {
+		public ArticleVendu getArticle() {
 			return article;
 		}
 		
-		public void setArticle(Article article) {
+		public void setArticle(ArticleVendu article) {
 			this.article = article;
 		}
 		

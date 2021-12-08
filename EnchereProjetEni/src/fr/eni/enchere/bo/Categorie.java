@@ -1,9 +1,12 @@
 package fr.eni.enchere.bo;
 
+import java.util.List;
+
 public class Categorie {
 
 		private int idCategorie;
 		private String libelle;
+		private List<ArticleVendu> articles;
 
 
 
@@ -30,6 +33,16 @@ public class Categorie {
 		@Override
 		public String toString() {
 			return "Categorie [idCategorie=" + idCategorie + ", libelle=" + libelle + "]";
+		}
+
+
+		public List<ArticleVendu> getArticles() {
+			return articles;
+		}
+
+
+		public void setArticles(List<ArticleVendu> articles) {
+			this.articles = articles;
 		}
 
 
