@@ -45,6 +45,6 @@
     <button type="submit" class="btn btn-primary" name="sEnregistrer">Créer</button>
  </form>
 
-<a href="PagePrincipale"><button type="submit" class="btn btn-primary">Annuler</button></a>
+<a href="accueil"><button type="submit" class="btn btn-primary">Annuler</button></a>
 </body>
 </html>
