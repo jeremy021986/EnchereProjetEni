@@ -4,9 +4,9 @@ import fr.eni.enchere.bo.Utilisateur;
 
 public interface UtilisateurDAO {
 	
-	Utilisateur selectById(int id) throws DALException;
-	void update(Utilisateur data) throws DALException;
-	void insert(Utilisateur data) throws DALException;
-	void delete(int id) throws DALException;
+	Utilisateur selectById(int idUtilisateur) throws DALException;
+	void update(Utilisateur MajUtilisateur) throws DALException;
+	void insert(Utilisateur ajoutUtilisateur) throws DALException;
+	void delete(int idUtilisateur) throws DALException;
 
 }
