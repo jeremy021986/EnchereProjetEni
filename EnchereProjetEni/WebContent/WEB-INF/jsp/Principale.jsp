@@ -12,7 +12,7 @@
 <body>
 <h1> ENI-Encheres</h1>
 <a href="<c:url value="CreaProfil"></c:url>"><button type="submit">Enchéres</button></a>
-<a href="<c:url value="PublicationVente"></c:url>"><button type="submit">Vendre un article</button></a>
+<a href="./PublicationVente"><button type="button">Vendre un article</button></a>
 <a href="./Profil"><button type="button">Mon profil</button></a>
 <a href="./Deconnection"><button type="button">Déconection</button></a>
  

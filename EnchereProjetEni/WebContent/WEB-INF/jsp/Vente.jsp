@@ -84,10 +84,10 @@ min="2021-12-17" max="2022-12-31">
         <label for="email">Ville : </label>
         <input type="email" name="description" id="description" required>
     </div>
-    <button type="submit">Enregistrer</button>
+    <button type="submit" class="btn btn-primary" name="sEnregistrer">Enregistrer</button>
     </form>
 
     
-    <button type="submit">Annuler</button>
+    <a href="PagePrincipale"><button type="submit" class="btn btn-primary">Annuler</button></a>
 </body>
 </html>
