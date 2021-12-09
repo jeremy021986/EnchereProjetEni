@@ -1,5 +1,8 @@
 package fr.eni.enchere.bll;
 
+import java.util.List;
+
+import fr.eni.enchere.bo.ArticleVendu;
 import fr.eni.enchere.bo.Utilisateur;
 import fr.eni.enchere.dal.DALException;
 import fr.eni.enchere.dal.DAOFactory;
@@ -27,6 +30,18 @@ public class UtilisateurManager {
 	
 	public static void delete(int idUtilisateur) throws BLLException, DALException{
 		utilisateurDAO.delete(idUtilisateur);
+	}
+	
+	public static List<Utilisateur> selectAllUsers() throws BLLException {
+		return utilisateurDAO.getAll();
+	}
+	
+	public static List<ArticleVendu> selectArticlesVendus ()throws BLLException{
+		return utilisateurDAO.getAllArticlesVendus(utilisateur);
+	}
+	
+	public static List<String> selectAllPseudos() throws BLLException{
+		return utilisateurDAO.getAllPseudos();
 	}
 	}
 
