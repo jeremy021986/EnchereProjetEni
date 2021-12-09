@@ -32,12 +32,22 @@ public class UtilisateurManager {
 		utilisateurDAO.delete(idUtilisateur);
 	}
 	
-	public static List<Utilisateur> selectAll() throws BLLException, DALException {
+	public static List<Utilisateur> selectAll() throws BLLException,DALException{
 		return utilisateurDAO.selectAll();
 	}
 	
-	public static void update(Utilisateur majUtilisateur)throws BLLException, DALException{
-		utilisateurDAO.update(majUtilisateur);
+	public static void update(Utilisateur majUtilisateur)throws BLLException{
+		try {
+			try {
+				utilisateurDAO.update(majUtilisateur);
+			} catch (DALException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public static void insert(Utilisateur aJouUtilisateur) throws DALException {
