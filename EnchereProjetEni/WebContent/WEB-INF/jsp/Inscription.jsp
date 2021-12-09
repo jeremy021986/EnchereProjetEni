@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,40 +11,125 @@
     <title>Inscription</title>
 </head>
 <body>
-<h1> ENI-Encheres</h1>
-<p>Mon Profil</p>
-<form method="post" action="./PageInscription">
-    <p>Pseudo :<input type="text" name="pseudo"/></p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Les objets sont nos amis</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- ms-auto = margin-left:auto -->
+          <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="accueil">Accueil</a>
+           </li>
+           <li class="nav-item">
+              <a class="nav-link" href="#">Profil</a>
+           </li>
+           <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+           </li>
+           <li class="nav-item">
+              <a class="nav-link" href="PageConnexion">s'inscrire / se connecter</a>
+           </li>
+         </ul>
+      </div>
+   </div>
+</nav>
+<div class="container my-6 col-6 p-5">
+	<h1> ENI-Encheres</h1>
+	<p>Mon Profil</p>
+	
+	<form method="post" action="./PageInscription">
 
 
-    <p>Nom :<input type="text" name="nom"/></p>
 
+	<div class="input-group col-4 py-4">
+	  	<div class="form-group col-my-4">
+	      <label for="inputPseudo">Pseudo:</label>
+	      <input type="text" class="form-control" id="inputPseudo" placeholder="Pseudo" required>
+	    </div>
+	    <div class="form-group col-my-4">
+	      <label for="inputNom">Nom:</label>
+	      <input type="text" class="form-control" id="inputNom" placeholder="Dupond" required>
+	    </div>
+    </div>
+  
+  <br>
 
-    <p>Prénom :<input type="text" name="prenom"/></p>
+  <div class="input-group">
+    <div class="form-group col-my-4">
+      <label for="inputPrenom">Prénom:</label>
+      <input type="text" class="form-control" id="inputPrenom" placeholder="Camille" required>
+    </div>
+    <div class="form-group col-my-4">
+      <label for="inputEmail">Email:</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="exemple@outlook.fr" required>
+    </div>
+  </div>
+  
+  <br>
 
+  <div class="input-group">
+    <div class="form-group col-my-4">
+      <label for="inputTelephone">Telephone:</label>
+      <input type="tel" class="form-control" id="inputTelephone" placeholder="0623637303" required>
+    </div>
+    <div class="form-group col-my-4">
+      <label for="inputRue">Rue:</label>
+      <input type="text" class="form-control" id="inputRue" placeholder="9 Rue Gambetta" required>
+    </div>
+  </div>
+  
+  <br>
+
+  <div class="input-group">
+	    <div class="form-group col-my-4">
+	      <label for="inputCP">Code postal:</label>
+	      <input type="number" class="form-control" id="inputCP" placeholder="44000" required>
+	    </div>
+	    <div class="form-group col-my-4">
+	      <label for="inputVille">Ville:</label>
+	      <input type="text" class="form-control" id="inputVille" placeholder="Nantes" required>
+	    </div>
+  </div>
+  
+  <br>
+   
+  <div class="input-group">
+	  <div class="form-group col-my-4">
+	    <label for="inputPassword">Mot de passe:</label>
+	    <input type="password" class="form-control" id="inputPassword" placeholder="8 caractères minimum" minlength="8" required>
+	  </div>
+	  <div class="form-group col-my-4">
+	    <label for="inputPassword2">Confirmation:</label>
+	    <input type="text" class="form-control" id="inputPassword2" placeholder="8 caractères minimum" minlength="8" required>
+	  </div>
+  </div>
+  
+  <br>
+
+  <div class="input-group">
+	  <div class="form-group col-my-4">
+	   	<button type="submit" class="btn btn-success">Créer</button>
+	  </div>
+	  <div class="form-group col-my-4">
+	    <a href="accueil"><button type="submit" class="btn btn-success">Annuler</button></a>
+	  </div>
+  </div>
  
-    <p>Email : <input type="text" name="email"/></p>
-
-
-    <p>Téléphone :  <input type="text" name="telephone"/></p>
-
- 
-    <p>Rue : <input type="text" name="rue"/></p>
-
-
-    <p>Code Postal : <input type="text" name="codepostal"/></p>
-
-
-    <p>Ville : <input type="text" name="ville"/></p>
-
-
-    <p>Mot de passe : <input type="text" name="motdepasse"/></p>
-
-
-    <p>Confirmation :<input type="text" name="confirmation"/></p>
-    <button type="submit" class="btn btn-primary" name="sEnregistrer">Créer</button>
  </form>
-
-<a href="accueil"><button type="submit" class="btn btn-primary">Annuler</button></a>
+ </div>
 </body>
+<footer class="container-fluid bg-dark p-5 text-white">
+      <div class="container text-center">&copy; 2021–2021 copyright</div>
+    </footer>
 </html>

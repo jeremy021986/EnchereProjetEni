@@ -173,6 +173,7 @@ public class Utilisateur {
 		this.pseudo = pseudo;
 		this.motDePasse = motDePasse;
 	}
+	
 
 	// Constructeur utilisateur pour vérification pseudo/mail
 	public Utilisateur(String pseudo, String nom, String email) {
@@ -180,6 +181,7 @@ public class Utilisateur {
 		this.nom = nom;
 		this.email = email;
 	}
+	
 
 
 	@Override
