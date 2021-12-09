@@ -12,6 +12,7 @@ import fr.eni.enchere.dal.UtilisateurDAO;
 
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
+	private final static String RECHERCHER = "select * from UTILISATEURS where pseudo = ? and mot_de_passe = ?;";
 	private final static String INSERT_USER = "INSERT INTO UTILISATEURS(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, administrateur) VALUES(?,?,?,?,?,?,?,?,?,?)";
 	private static final String SELECT_USER_BY_ID = "SELECT no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit FROM UTILISATEURS WHERE no_utilisateur=?";
 	private static final String UPDATE_USER = "UPDATE UTILISATEURS SET pseudo= ?, email=?, telephone=?, rue=?, code_postal=?, ville=?, mot_de_passe=?, credit=? WHERE no_utilisateur=?";
@@ -21,6 +22,60 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	public UtilisateurDAOJdbcImpl() {
 
 	}
+	
+	public static Utilisateur rechercher(String pseudo, String mdp) throws DALException {
+		
+		Connection cnx=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		Utilisateur user = new Utilisateur();
+		 
+		try {
+			cnx= ConnectionProvider.getConnection();
+			pstmt=cnx.prepareStatement(RECHERCHER);
+			pstmt.setString(1, pseudo);
+			pstmt.setString(2, mdp);
+			rs=pstmt.executeQuery();
+		if (rs.next()){
+			rs.getString("pseudo");
+			user.setPseudo(rs.getString("pseudo"));
+			rs.getString("mdp");
+			user.setMotDePasse(rs.getString("mdp"));
+			rs.getString("nom");
+			user.setNom(rs.getString("nom"));
+			rs.getString("prenom");
+			user.setPrenom(rs.getString("prenom"));
+			rs.getString("email");
+			user.setEmail(rs.getString("email"));
+			rs.getString("telephone");
+			user.setTelephone(rs.getString("telephone"));
+			rs.getString("rue");
+			user.setRue(rs.getString("rue"));
+			rs.getString("cp");
+			user.setCodePostal(rs.getString("cp"));
+			rs.getString("ville");
+			user.setVille(rs.getString("ville"));
+			rs.getInt("Credit");
+			user.setCredit(Integer.parseInt(rs.getString("Credit")));
+		}
+		} catch (SQLException e) {
+			
+				throw new DALException ("Probleme - rechercherUtilisateur - " + e.getMessage());
+		
+		}finally{
+			try{
+				if (pstmt!=null) pstmt.close();
+				if (cnx!=null) cnx.close();
+			} catch (SQLException e) {
+					throw new DALException ("Probleme - FermerConnexion - " + e.getMessage());
+			}
+
+		}
+		return user;
+		
+	}
+	
+	
 
 	@Override // Création d'un nouvel utilisateur
 	public void insert(Utilisateur ajoutUtilisateur) throws DALException {
