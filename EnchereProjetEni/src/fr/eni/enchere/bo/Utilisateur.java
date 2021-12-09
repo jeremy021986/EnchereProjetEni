@@ -20,6 +20,8 @@ public class Utilisateur {
 	private List<Enchere> encheres;
 	private List<ArticleVendu> articles;
 	private List<Utilisateur> utilisateurs;
+	
+	
 
 	// Getters/Setters
 	public int getIdUtilisateur() {
@@ -145,6 +147,19 @@ public class Utilisateur {
 	// Constructeur
 	public Utilisateur() {
 	}
+	public Utilisateur(int idUtilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue,
+			String codePostal, String ville, String motDePasse) {
+		this.idUtilisateur = idUtilisateur;
+		this.pseudo = pseudo;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+		this.rue = rue;
+		this.codePostal = codePostal;
+		this.ville = ville;
+		this.motDePasse = motDePasse;
+	}
 
 	// Affichage du profil >> page infoVendeur et profilUtilisateur
 	public Utilisateur(String pseudo, String nom, String prenom, String email, String telephone, String rue,
@@ -173,7 +188,6 @@ public class Utilisateur {
 		this.pseudo = pseudo;
 		this.motDePasse = motDePasse;
 	}
-	
 
 	// Constructeur utilisateur pour vérification pseudo/mail
 	public Utilisateur(String pseudo, String nom, String email) {
@@ -181,7 +195,6 @@ public class Utilisateur {
 		this.nom = nom;
 		this.email = email;
 	}
-	
 
 
 	@Override
@@ -192,4 +205,7 @@ public class Utilisateur {
 				+ ", administrateur=" + administrateur + ", encheres=" + encheres + ", articles=" + articles + "]";
 	}
 
+	 
+	
 }
+

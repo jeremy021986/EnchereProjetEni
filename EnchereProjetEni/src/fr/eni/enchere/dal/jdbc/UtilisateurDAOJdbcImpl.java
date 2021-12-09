@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.eni.enchere.bll.BLLException;
+import fr.eni.enchere.bll.UtilisateurManager;
 import fr.eni.enchere.bo.Utilisateur;
 import fr.eni.enchere.dal.DALException;
 import fr.eni.enchere.dal.UtilisateurDAO;
@@ -21,9 +23,41 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String DELETE_USER = "DELETE FROM UTILISATEURS WHERE no_utilisateur=?";
 	private static final String SELECT_BY_PSEUDO = "SELECT * FROM UTILISATEURS WHERE pseudo = ?";
 	private static final String SELECT_ALL = "SELECT * FROM UTILISATEURS";
+	private static final String AFFICHER_PROFIL = "SELECT no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe from UTILISATEURS where pseudo = ?";
 	
 	public UtilisateurDAOJdbcImpl() {
 
+	}
+	public Utilisateur afficherProfil(String pseudo) throws DALException {
+
+		Utilisateur utilisateur = null;
+
+		// Obtenir une connexion
+		Connection cnx = ConnectionProvider.getConnection();
+
+		// Obtient une objet de commande (Statement) = ordre SQL
+		try {
+
+			// Paramétrer l'objet de commande
+
+			PreparedStatement pStmt = cnx.prepareStatement(AFFICHER_PROFIL);
+			pStmt.setString(1, pseudo);
+
+			// Execute l'ordre SQL
+			ResultSet rs = null;
+			rs = pStmt.executeQuery();
+
+			if (rs.next()) {
+				utilisateur = maps(rs);
+			}
+
+			cnx.close();
+
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}
+
+		return utilisateur;
 	}
 	
 	 public List<Utilisateur> selectAll() throws DALException {
@@ -238,20 +272,20 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	}
 	
 	   private Utilisateur maps(ResultSet rs) throws SQLException {
-	        return new Utilisateur(
-	                rs.getInt("idUtilisateur"),
-	                rs.getString("pseudo"),
-	                rs.getString("nom"),
-	                rs.getString("prenom"),
-	                rs.getString("email"),
-	                rs.getString("telephone"),
-	                rs.getString("rue"),
-	                rs.getString("codePostal"),
-	                rs.getString("ville"),
-	                rs.getString("motDePasse"),
-	                rs.getInt("credit"),
-	                rs.getBoolean("administrateur")
-	        );
-	    }
+		   Utilisateur utilisateur = null;
+			int idUtilisateur = rs.getInt("no_utilisateur");
+			String pseudo = rs.getString("pseudo");
+			String nom = rs.getString("nom");
+			String prenom = rs.getString("prenom");
+			String email = rs.getString("email");
+			String telephone = rs.getString("telephone");
+			String rue = rs.getString("rue");
+			String code_postal = rs.getString("code_postal");
+			String ville = rs.getString("ville");
+			String motDePasse = rs.getString("mot_de_passe");
 
+			utilisateur = new Utilisateur(idUtilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, motDePasse);
+
+			return utilisateur;
+}
 }

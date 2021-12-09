@@ -11,69 +11,120 @@ import fr.eni.enchere.dal.jdbc.UtilisateurDAOJdbcImpl;
 
 public class UtilisateurManager {
 
-	
 	private static UtilisateurDAO utilisateurDAO = new UtilisateurDAOJdbcImpl();
 	private static Utilisateur utilisateur = new Utilisateur();
 	private static BLLException businessException = new BLLException();
-	
+
 	/** SINGLETON **/
 	private static UtilisateurManager instance;
-	
+
 	public static UtilisateurManager getInstance() {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new UtilisateurManager();
 		}
 		return instance;
 	}
-	
+
+	public UtilisateurManager() {}
+
 	/** FIN SINGLETON **/
 	
-	public UtilisateurManager() {
-		UtilisateurManager.utilisateurDAO = DAOFactory.getUtilisateurDAO();
-	}
-	
-	public static Utilisateur selectById(int idUtilisateur) throws BLLException, DALException {
-		return utilisateurDAO.selectById(idUtilisateur);
-	}
+	private  UtilisateurDAO dao = DAOFactory.getUtilisateurDAO();
 
-	public static Utilisateur selectUtilisateurByPseudo(String pseudo) throws BLLException, DALException{
-		return utilisateurDAO.selectUtilisateurByPseudo(pseudo);
-	}
-	
-	public static void delete(int idUtilisateur) throws BLLException, DALException{
-		utilisateurDAO.delete(idUtilisateur);
-	}
-	
-	public static List<Utilisateur> selectAll() throws BLLException,DALException{
-		return utilisateurDAO.selectAll();
-	}
-	
-	public static void update(Utilisateur majUtilisateur)throws BLLException{
+	public  Utilisateur selectById(int idUtilisateur) throws BLLException {
 		try {
-			try {
-				utilisateurDAO.update(majUtilisateur);
-			} catch (DALException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} catch (Exception e) {
+			return dao.selectById(idUtilisateur);
+		} catch (DALException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			BLLException ex = new BLLException();
+			ex.ajouterErreur(e);
+			throw ex;
 		}
 	}
 	
-	public static void insert(Utilisateur aJouUtilisateur) throws DALException {
-		utilisateurDAO.insert(aJouUtilisateur);
-	}
-	
-	public static Utilisateur rechercher(String pseudo, String motDePasse) throws DALException{
-		return utilisateurDAO.rechercher(pseudo, motDePasse);
-	}
-	
-	//public static List<ArticleVendu> selectArticlesVendus ()throws BLLException{
-	//	return utilisateurDAO.getAllArticlesVendus(utilisateur);
-	//}
-	
-	
+	public Utilisateur afficherProfil(String pseudo) throws BLLException {
+
+		BLLException ex = new BLLException();
+		validationPseudo(pseudo, ex);
+		Utilisateur utilisateur = null;
+		try {
+			utilisateur = dao.afficherProfil(pseudo);
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return utilisateur;
+
+	}  
+
+	public  Utilisateur selectUtilisateurByPseudo(String pseudo) throws BLLException {
+		try {
+			return dao.selectUtilisateurByPseudo(pseudo);
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			BLLException ex = new BLLException();
+			ex.ajouterErreur(e);
+			throw ex;
+		}
 	}
 
+	public  void delete(int idUtilisateur) throws BLLException {
+		try {
+			dao.delete(idUtilisateur);
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			BLLException ex = new BLLException();
+			ex.ajouterErreur(e);
+			throw ex;
+		}
+	}
+
+	public  List<Utilisateur> selectAll() throws BLLException {
+		try {
+			return dao.selectAll();
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			BLLException ex = new BLLException();
+			ex.ajouterErreur(e);
+			throw ex;
+		}
+	}
+
+	public void update(String pseudo, String nom, String prenom, String email, String telephone, String rue,
+			String codePostal, String ville) throws BLLException {
+		
+		Utilisateur a = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, codePostal, ville);
+		
+		try {
+			dao.update(a);
+		} catch (DALException e) {
+			e.printStackTrace();
+			BLLException ex = new BLLException();
+			ex.ajouterErreur(e);
+			throw ex;
+		}
+	}
+
+	public  void insert(Utilisateur aJouUtilisateur) throws DALException {
+		dao.insert(aJouUtilisateur);
+	}
+
+	public  Utilisateur rechercher(String pseudo, String motDePasse) throws DALException {
+		return dao.rechercher(pseudo, motDePasse);
+	}
+
+	// public static List<ArticleVendu> selectArticlesVendus ()throws BLLException{
+	// return utilisateurDAO.getAllArticlesVendus(utilisateur);
+	// }
+	private void validationPseudo(String pseudo, BLLException ex) throws BLLException {
+		if (pseudo == null || pseudo.isEmpty() || pseudo.length() > 30) {
+			ex.ajouterErreur(new ParameterException(
+					"Le pseudo est obligatoire et doit avoir une longueur comprise entre 1 et 30"));
+		}
+	}
+
+}

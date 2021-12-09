@@ -15,5 +15,6 @@ public interface UtilisateurDAO {
 	Utilisateur rechercher(String pseudo, String motDePasse) throws DALException;
 	public List<Utilisateur> selectAll() throws DALException;
 	Utilisateur selectUtilisateurByPseudo(String pseudo) throws DALException;
+	Utilisateur afficherProfil(String pseudo) throws DALException;
 	
 }
