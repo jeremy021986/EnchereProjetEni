@@ -2,11 +2,20 @@ package fr.eni.enchere.bo;
 
 public class Retrait {
 		
+		private int idRetrait;
 		private ArticleVendu article;
 		private String rue;
 		private String codePostal;
 		private String ville;
 		
+		public int getIdRetrait() {
+			return idRetrait;
+		}
+
+		public void setIdRetrait(int idRetrait) {
+			this.idRetrait = idRetrait;
+		}
+
 		public ArticleVendu getArticle() {
 			return article;
 		}
