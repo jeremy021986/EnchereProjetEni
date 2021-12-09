@@ -23,7 +23,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 	}
 	
-	public static Utilisateur rechercher(String pseudo, String mdp) throws DALException {
+	public Utilisateur rechercher(String pseudo, String mdp) throws DALException {
 		
 		Connection cnx=null;
 		PreparedStatement pstmt=null;
