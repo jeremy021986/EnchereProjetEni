@@ -11,7 +11,7 @@ import fr.eni.enchere.bo.ArticleVendu;
 
 public interface ArticleVenduDAO {
 	
-	ArticleVendu selectById(int id) throws DALException;
+	ArticleVendu selectById(int idArticle) throws DALException;
 	void update(ArticleVendu articleVendu) throws DALException, SQLException;
 	void insert(ArticleVendu articleVendu) throws DALException;
 	void delete(int id) throws DALException;

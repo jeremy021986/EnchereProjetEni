@@ -43,6 +43,9 @@ public class ArticleVendu {
 			// TODO Auto-generated constructor stub
 		}
 
+		public ArticleVendu() {
+			// TODO Auto-generated constructor stub
+		}
 		public int getIdArticle() {
 			return idArticle;
 		}

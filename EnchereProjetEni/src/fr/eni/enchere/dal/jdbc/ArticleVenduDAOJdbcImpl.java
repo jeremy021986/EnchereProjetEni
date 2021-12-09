@@ -179,7 +179,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 		int idArticle = rs.getInt("idArticle");
 		String nomArticle = rs.getString("nomArticle");
 		String description = rs.getString("description");
-		Date dateDebutEncheres = rs.getDate("dateDebutEncheres").toLocalDate();
+		Date dateDebutEncheres = rs.getDate("dateDebutEncheres");
 		Date dateFinEncheres = rs.getDate("dateFinEncheres");
 		int prixInitial = rs.getInt("prixInitial");
 		int prixVente = rs.getInt("prixVente");
