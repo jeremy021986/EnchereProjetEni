@@ -9,4 +9,7 @@ public interface UtilisateurDAO {
 	void insert(Utilisateur ajoutUtilisateur) throws DALException;
 	void delete(int idUtilisateur) throws DALException;
 	Utilisateur rechercher(String pseudo, String mdp) throws DALException; 
+	Utilisateur selectUserByPseudo(String pseudo) throws DALException;
+	
+	
 }
