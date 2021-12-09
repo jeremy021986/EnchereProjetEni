@@ -17,12 +17,34 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String SELECT_USER_BY_ID = "SELECT no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit FROM UTILISATEURS WHERE no_utilisateur=?";
 	private static final String UPDATE_USER = "UPDATE UTILISATEURS SET pseudo= ?, email=?, telephone=?, rue=?, code_postal=?, ville=?, mot_de_passe=?, credit=? WHERE no_utilisateur=?";
 	private static final String DELETE_USER = "DELETE FROM UTILISATEURS WHERE no_utilisateur=?";
-	
+	private static final String SELECT_BY_PSEUDO = "SELECT * FROM UTILISATEURS WHERE pseudo = ?";
 
 	public UtilisateurDAOJdbcImpl() {
 
 	}
-	
+	public Utilisateur selectUtilisateurByPseudo(String pseudo) throws DALException {
+		Utilisateur utilisateur = null;
+		
+			 try{Connection cnx = ConnectionProvider.getConnection();
+			
+        
+            PreparedStatement stmt = cnx.prepareStatement(SELECT_BY_PSEUDO);
+            stmt.setString(1, pseudo);
+            stmt.execute();
+            ResultSet rs = stmt.getResultSet();
+            if (rs.next()) {
+                utilisateur = maps(rs);
+            }
+            cnx.close();
+			 }
+			 
+			 catch (SQLException e) {
+				 e.printStackTrace();
+				 throw new DALException(e.getMessage());
+			 }
+        
+        return utilisateur;
+    }
 	public Utilisateur rechercher(String pseudo, String mdp) throws DALException {
 		
 		Connection cnx=null;
@@ -51,8 +73,8 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			user.setTelephone(rs.getString("telephone"));
 			rs.getString("rue");
 			user.setRue(rs.getString("rue"));
-			rs.getString("cp");
-			user.setCodePostal(rs.getString("cp"));
+			rs.getString("codePostal");
+			user.setCodePostal(rs.getString("codePostal"));
 			rs.getString("ville");
 			user.setVille(rs.getString("ville"));
 			rs.getInt("Credit");
@@ -185,4 +207,22 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		}
 
 	}
+	
+	   private Utilisateur maps(ResultSet rs) throws SQLException {
+	        return new Utilisateur(
+	                rs.getInt("idUtilisateur"),
+	                rs.getString("pseudo"),
+	                rs.getString("nom"),
+	                rs.getString("prenom"),
+	                rs.getString("email"),
+	                rs.getString("telephone"),
+	                rs.getString("rue"),
+	                rs.getString("codePostal"),
+	                rs.getString("ville"),
+	                rs.getString("motDePasse"),
+	                rs.getInt("credit"),
+	                rs.getBoolean("administrateur")
+	        );
+	    }
+
 }

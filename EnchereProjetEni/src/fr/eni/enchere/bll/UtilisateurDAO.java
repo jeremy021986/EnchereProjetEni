@@ -1,6 +1,7 @@
 package fr.eni.enchere.dal;
 
 import fr.eni.enchere.bo.Utilisateur;
+import fr.eni.enchere.dal.DALException;
 
 public interface UtilisateurDAO {
 	
