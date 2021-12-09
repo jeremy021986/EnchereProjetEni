@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import fr.eni.enchere.bo.Utilisateur;
 import fr.eni.enchere.dal.DALException;
@@ -18,10 +20,37 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String UPDATE_USER = "UPDATE UTILISATEURS SET pseudo= ?, email=?, telephone=?, rue=?, code_postal=?, ville=?, mot_de_passe=?, credit=? WHERE no_utilisateur=?";
 	private static final String DELETE_USER = "DELETE FROM UTILISATEURS WHERE no_utilisateur=?";
 	private static final String SELECT_BY_PSEUDO = "SELECT * FROM UTILISATEURS WHERE pseudo = ?";
-
+	private static final String SELECT_ALL = "SELECT * FROM UTILISATEURS";
+	
 	public UtilisateurDAOJdbcImpl() {
 
 	}
+	
+	 public List<Utilisateur> selectAll() throws DALException {
+		 
+		 List<Utilisateur> utilisateurs = new ArrayList<>();
+	       
+		 try {Connection cnx = ConnectionProvider.getConnection();
+	       
+	        
+	            Statement stmt = cnx.createStatement();
+	     
+	            stmt.execute(SELECT_ALL);
+	            ResultSet rs = stmt.getResultSet();
+	            while (rs.next()) {
+	                utilisateurs.add(maps(rs));
+	            }
+	            cnx.close();
+		 }
+		 
+		 catch (SQLException e) {
+			 e.printStackTrace();
+			 throw new DALException(e.getMessage());
+		 }
+	        return utilisateurs;
+	    }
+	
+	
 	public Utilisateur selectUtilisateurByPseudo(String pseudo) throws DALException {
 		Utilisateur utilisateur = null;
 		
