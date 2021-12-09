@@ -24,24 +24,34 @@ public class UtilisateurManager {
 		return utilisateurDAO.selectById(idUtilisateur);
 	}
 
-	public static Utilisateur selectUserByPseudo(String pseudo) throws BLLException, DALException{
-		return utilisateurDAO.selectUserByPseudo(pseudo);
+	public static Utilisateur selectUtilisateurByPseudo(String pseudo) throws BLLException, DALException{
+		return utilisateurDAO.selectUtilisateurByPseudo(pseudo);
 	}
 	
 	public static void delete(int idUtilisateur) throws BLLException, DALException{
 		utilisateurDAO.delete(idUtilisateur);
 	}
 	
-	public static List<Utilisateur> selectAllUsers() throws BLLException {
-		return utilisateurDAO.getAll();
+	public static List<Utilisateur> selectAll() throws BLLException, DALException {
+		return utilisateurDAO.selectAll();
 	}
 	
-	public static List<ArticleVendu> selectArticlesVendus ()throws BLLException{
-		return utilisateurDAO.getAllArticlesVendus(utilisateur);
+	public static void update(Utilisateur majUtilisateur)throws BLLException, DALException{
+		utilisateurDAO.update(majUtilisateur);
 	}
 	
-	public static List<String> selectAllPseudos() throws BLLException{
-		return utilisateurDAO.getAllPseudos();
+	public static void insert(Utilisateur aJouUtilisateur) throws DALException {
+		utilisateurDAO.insert(aJouUtilisateur);
 	}
+	
+	public static Utilisateur rechercher(String pseudo, String motDePasse) throws DALException{
+		return utilisateurDAO.rechercher(pseudo, motDePasse);
+	}
+	
+	//public static List<ArticleVendu> selectArticlesVendus ()throws BLLException{
+	//	return utilisateurDAO.getAllArticlesVendus(utilisateur);
+	//}
+	
+	
 	}
 
