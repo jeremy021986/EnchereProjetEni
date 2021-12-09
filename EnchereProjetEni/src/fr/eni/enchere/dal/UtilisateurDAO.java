@@ -12,10 +12,8 @@ public interface UtilisateurDAO {
 	void update(Utilisateur MajUtilisateur) throws DALException;
 	void insert(Utilisateur ajoutUtilisateur) throws DALException;
 	void delete(int idUtilisateur) throws DALException;
-	Utilisateur rechercher(String pseudo, String mdp) throws DALException; 
-	Utilisateur selectUserByPseudo(String pseudo) throws DALException;
-	public List<Utilisateur> getAll() throws BLLException;
-	List<ArticleVendu> getAllArticlesVendus(Utilisateur utilisateur)throws BLLException;
-	List<String> getAllPseudos()throws BLLException;
+	Utilisateur rechercher(String pseudo, String motDePasse) throws DALException;
+	public List<Utilisateur> selectAll() throws DALException;
+	Utilisateur selectUtilisateurByPseudo(String pseudo) throws DALException;
 	
 }

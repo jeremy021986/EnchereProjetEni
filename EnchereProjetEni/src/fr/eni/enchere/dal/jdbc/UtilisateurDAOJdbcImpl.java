@@ -74,7 +74,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
         
         return utilisateur;
     }
-	public Utilisateur rechercher(String pseudo, String mdp) throws DALException {
+	public Utilisateur rechercher(String pseudo, String motDePasse) throws DALException {
 		
 		Connection cnx=null;
 		PreparedStatement pstmt=null;
@@ -85,13 +85,13 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			cnx= ConnectionProvider.getConnection();
 			pstmt=cnx.prepareStatement(RECHERCHER);
 			pstmt.setString(1, pseudo);
-			pstmt.setString(2, mdp);
+			pstmt.setString(2, motDePasse);
 			rs=pstmt.executeQuery();
 		if (rs.next()){
 			rs.getString("pseudo");
 			user.setPseudo(rs.getString("pseudo"));
-			rs.getString("mdp");
-			user.setMotDePasse(rs.getString("mdp"));
+			rs.getString("motDePasse");
+			user.setMotDePasse(rs.getString("motDePasse"));
 			rs.getString("nom");
 			user.setNom(rs.getString("nom"));
 			rs.getString("prenom");
