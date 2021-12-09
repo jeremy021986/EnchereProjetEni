@@ -42,7 +42,7 @@
               <a class="nav-link" href="#">Contact</a>
            </li>
            <li class="nav-item">
-              <a class="nav-link" href="PageConnexion">s'inscrire / se connecter</a>
+              <a class="nav-link" href="PageConnexion">S'inscrire / Se connecter</a>
            </li>
          </ul>
       </div>
@@ -63,14 +63,14 @@
 			<h1 class="h3 mb-3 fw-normal">Se connecter</h1>
 
 			<div class="form-floating">
-				<label for="pseudo">Identifiant : </label> <input type="text" id="motDePasse"
-            name="motDePasse" 
+				<label for="pseudo">Identifiant : </label> <input type="text" id="pseudo"
+            name="pseudo" 
 					class="form-control" id="pseudo" name="pseudo" placeholder="Votre pseudo">
 			</div>
 			<br>
 			<div class="form-floating">
 				<label for="motDePasse">Mot de passe :</label> <input
-					type="password" class="form-control" id="floatingPassword"
+					type="password" class="form-control" id="motDePasse"  name="motDePasse"
 					placeholder="Mot de passe">
 			</div>
 
