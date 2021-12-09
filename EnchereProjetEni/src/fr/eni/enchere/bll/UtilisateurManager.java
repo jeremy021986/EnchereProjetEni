@@ -16,6 +16,18 @@ public class UtilisateurManager {
 	private static Utilisateur utilisateur = new Utilisateur();
 	private static BLLException businessException = new BLLException();
 	
+	/** SINGLETON **/
+	private static UtilisateurManager instance;
+	
+	public static UtilisateurManager getInstance() {
+		if(instance == null) {
+			instance = new UtilisateurManager();
+		}
+		return instance;
+	}
+	
+	/** FIN SINGLETON **/
+	
 	public UtilisateurManager() {
 		UtilisateurManager.utilisateurDAO = DAOFactory.getUtilisateurDAO();
 	}
