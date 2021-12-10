@@ -2,6 +2,7 @@ package fr.eni.enchere.bll;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import fr.eni.enchere.bo.ArticleVendu;
 import fr.eni.enchere.bo.Categorie;
@@ -48,8 +49,8 @@ public class ArticleVenduManager {
 		}
 	}
 	
-	public void update(int idArticle, String nomArticle, String description, LocalDate dateDebutEnchere,
-			LocalDate dateFinEnchere, int prixInitial, int prixVente, boolean etatVente, Categorie categorie,
+	public void update(int idArticle, String nomArticle, String description, LocalDateTime dateDebutEnchere,
+			LocalDateTime dateFinEnchere, int prixInitial, int prixVente, boolean etatVente, Categorie categorie,
 			Utilisateur utilisateur, Enchere enchere) throws DALException, SQLException {
 		
 	ArticleVendu articleVendu = new ArticleVendu(idArticle, nomArticle, description, dateDebutEnchere, dateFinEnchere, prixInitial, prixVente, etatVente,categorie,utilisateur,enchere);
