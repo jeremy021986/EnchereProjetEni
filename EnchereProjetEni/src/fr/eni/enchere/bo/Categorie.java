@@ -6,9 +6,14 @@ public class Categorie {
 
 		private int idCategorie;
 		private String libelle;
-		private List<ArticleVendu> articles;
+		private List<ArticleVendu> ListeArticles;
 
 
+		public Categorie (int idCategorie, String libelle) {
+			this.idCategorie = idCategorie;
+			this.libelle = libelle;
+		}
+		
 
 		public int getIdCategorie() {
 			return idCategorie;
@@ -37,13 +42,15 @@ public class Categorie {
 
 
 		public List<ArticleVendu> getArticles() {
-			return articles;
+			return ListeArticles;
 		}
 
 
 		public void setArticles(List<ArticleVendu> articles) {
-			this.articles = articles;
+			this.ListeArticles = articles;
 		}
+
+
 
 
 	}

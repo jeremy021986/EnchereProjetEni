@@ -3,6 +3,7 @@ package fr.eni.enchere.bll;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import fr.eni.enchere.bo.ArticleVendu;
 import fr.eni.enchere.bo.Categorie;
@@ -37,7 +38,7 @@ public class ArticleVenduManager {
 
 	private  ArticleVenduDAO dao = DAOFactory.getArticleVenduDAO();
 	
-	public  ArticleVendu selectById(int idArticle) throws BLLException {
+	public  ArticleVendu selectByIdArticle(int idArticle) throws BLLException {
 		try {
 			return dao.selectById(idArticle);
 		} catch (DALException e) {
@@ -49,13 +50,82 @@ public class ArticleVenduManager {
 		}
 	}
 	
-	public void update(int idArticle, String nomArticle, String description, LocalDateTime dateDebutEnchere,
+	public void updateArticle(int idArticle, String nomArticle, String description, LocalDateTime dateDebutEnchere,
 			LocalDateTime dateFinEnchere, int prixInitial, int prixVente, boolean etatVente, Categorie categorie,
 			Utilisateur utilisateur, Enchere enchere) throws DALException, SQLException {
 		
 	ArticleVendu articleVendu = new ArticleVendu(idArticle, nomArticle, description, dateDebutEnchere, dateFinEnchere, prixInitial, prixVente, etatVente,categorie,utilisateur,enchere);
 	dao.update(articleVendu);
+	
+	try {
+		dao.update(articleVendu);
+	} catch (DALException e) {
+		e.printStackTrace();
+		BLLException ex = new BLLException();
+		ex.ajouterErreur(e);
+		throw e;
+	}
 		
 	}
+	
+	public  void insertArticle(ArticleVendu ajoutArticle) throws DALException {
+		dao.insert(ajoutArticle);
+	}
+	
+	public  void deleteArticle(int idArticle) throws BLLException {
+		try {
+			dao.delete(idArticle);
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			BLLException ex = new BLLException();
+			ex.ajouterErreur(e);
+			throw ex;
+		}
+	}
+	
+	public  List<ArticleVendu> selectAll() throws BLLException {
+		try {
+			return dao.selectAll();
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			BLLException ex = new BLLException();
+			ex.ajouterErreur(e);
+			throw ex;
+		}
+	}
+	
+	public  ArticleVendu selectByUser(int id) throws BLLException, SQLException {
+		// TODO verif SQL Exceptions
+		try {
+			return dao.selectByUser(id);
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			BLLException ex = new BLLException();
+			ex.ajouterErreur(e);
+			throw ex;
+		}
+	}
+	
+	public  ArticleVendu rechercher(String nomArticle) throws DALException {
+		return dao.rechercher(nomArticle);
+	}
+	
+	public ArticleVendu afficherArticle(String nomArticle) throws BLLException {
+
+		ArticleVendu articleVendu = null;
+		try {
+			articleVendu = dao.afficherArticle(nomArticle);
+		} catch (DALException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return articleVendu;
+
+	} 
+	
+
 	
 }

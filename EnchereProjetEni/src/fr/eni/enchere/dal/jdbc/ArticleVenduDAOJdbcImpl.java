@@ -9,7 +9,10 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import fr.eni.enchere.bll.BLLException;
 import fr.eni.enchere.bo.ArticleVendu;
+import fr.eni.enchere.bo.Categorie;
 import fr.eni.enchere.bo.Retrait;
 import fr.eni.enchere.bo.Utilisateur;
 import fr.eni.enchere.dal.ArticleVenduDAO;
@@ -17,8 +20,11 @@ import fr.eni.enchere.dal.DALException;
 
 public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 
+	private final static String RECHERCHER = "select * from ARTICLES_VENDUS where nom_article = ?";
+
 	private final static String SELECT_ALL = "SELECT av.id as id_no_article, nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, no_utilisateur, no_categorie"
-			+ "FROM ARTICLES_VENDUS av inner join RETRAITS r on (av.id = r.no_article";
+			+ "FROM ARTICLES_VENDUS av inner join RETRAITS r on (av.id = r.no_article)"
+			+ "FROM ARTICLES_VENDUS av inner join CATEGORIES c on (av.id = c.no_categorie)";
 
 	private final static String SELECT_BY_ID = "SELECT * FROM ARTICLES_VENDUS WHERE no_article=?";
 	private final static String INSERT = "INSERT INTO ARTICLES_VENDUS(no_article, nom_article, description, date_debut_encheres,date_fin_encheres, prix_initial, prix_vente, no_utilisateur, no_categorie) VALUES(?,?,?,?,?,?,?,?,?)";
@@ -28,7 +34,8 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 			+ "							 no_utilisateur= ?, no_categorie=?, no_retrait=? where no_article= ? ";
 	private final static String DELETE = "DELETE FROM ARTICLES_VENDUS WHERE idArticle=?";
 	private final static String SELECT_BY_USER = "SELECT * FROM ARTICLES_VENDUS where no_utilisateur=?";
-
+	private static final String AFFICHER_ARTICLE = "SELECT no_article, nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, no_utilisateur, no_categorie from ARTICLES_VENDUS where nom_article = ?";
+	
 	public ArticleVenduDAOJdbcImpl() {
 
 	}
@@ -128,6 +135,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 		}
 	}
 
+	
 	@Override
 	public List<ArticleVendu> selectAll() throws DALException {
 
@@ -149,6 +157,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 			// à partir des informations de la base de données
 			ArticleVendu nouvelArticleVendu = null;
 			Retrait nouveauRetrait = null;
+			Categorie nouvelleCategorie = null;
 			int idArticleOnline = -1; // "-1" signife "pas d'identifiant"
 
 			while (rs.next()) {
@@ -187,6 +196,16 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 				// Ajouter le nouveau retrait à l'article en enchères (en cours)
 				nouvelArticleVendu.getListeRetrait().add(nouveauRetrait);
 			}
+
+			// Instancier la catégorie
+			int idCat = rs.getInt("no_categorie");
+			String libelleCat = rs.getString("libelle");
+
+			nouvelleCategorie = new Categorie(idCat, libelleCat);
+
+			// Ajouter la nouvelle categorie à l'article en enchères (en cours)
+			nouvelArticleVendu.getListeCategorie().add(nouvelleCategorie);
+
 			cnx.close();
 		} catch (SQLException sqle) {
 			sqle.printStackTrace();
@@ -197,28 +216,115 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 	}
 
 	@Override
-	public List<ArticleVendu> selectByUser(int id) throws DALException, SQLException {
+	public ArticleVendu selectByUser(int id) throws DALException {
+		ArticleVendu articleVendu = null;
 
-		List<ArticleVendu> articlesVendus = new ArrayList<>();
+		try {
+			Connection cnx = ConnectionProvider.getConnection();
 
-		try (Connection cnx = ConnectionProvider.getConnection()) {
-			PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_USER);
-			pstmt.setInt(1, id);
-
-			ResultSet rs = pstmt.executeQuery();
-
-			ArticleVendu articleVendu = null;
-
-			while (rs.next()) {
+			PreparedStatement stmt = cnx.prepareStatement(SELECT_BY_USER);
+			stmt.setInt(1, id);
+			stmt.execute();
+			ResultSet rs = stmt.getResultSet();
+			if (rs.next()) {
 				articleVendu = map(rs);
-				articlesVendus.add(articleVendu);
-
 			}
+			cnx.close();
+		}
+
+		catch (SQLException e) {
+			e.printStackTrace();
+			throw new DALException(e.getMessage());
+		}
+
+		return articleVendu;
+	}
+
+	public ArticleVendu rechercher(String nomArticle) throws DALException {
+
+		Connection cnx = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArticleVendu articleVendu = new ArticleVendu();
+
+		try {
+			cnx = ConnectionProvider.getConnection();
+			pstmt = cnx.prepareStatement(RECHERCHER);
+			pstmt.setString(1, nomArticle);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				rs.getString("nomArticle");
+				articleVendu.setNomArticle(rs.getString("nomArticle"));
+				rs.getString("description");
+				articleVendu.setDescription(rs.getString("description"));
+				
+				//TODO Vérifier les Statements Date début/fin enchère et lieu de retrait
+				
+//				rs.getLocalDateTime("dateDebutEnchere");
+//				articleVendu.setDateDebutEnchere(rs.getString("dateDebutEnchere"));
+//				rs.getLocalDateTime("dateFinEnchere");
+//				articleVendu.setDateFinEnchere(rs.getString("dateFinEnchere"));
+				rs.getInt("prixInitial");
+				articleVendu.setPrixInitial(rs.getInt("prixInitial"));
+				rs.getInt("prixVente");
+				articleVendu.setPrixVente(rs.getInt("prixVente"));
+				rs.getBoolean("etatVente");
+				articleVendu.setEtatVente(rs.getBoolean("rue"));
+//				rs.getRetrait("LieuRetrait");
+//				articleVendu.setLieuRetrait(rs.getRetrait("LieuRetrait"));
+
+				
+			}
+		} catch (SQLException e) {
+
+			throw new DALException("Probleme - rechercherUtilisateur - " + e.getMessage());
+
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (cnx != null)
+					cnx.close();
+			} catch (SQLException e) {
+				throw new DALException("Probleme - FermerConnexion - " + e.getMessage());
+			}
+
+		}
+		return articleVendu;
+
+	}
+	
+	public ArticleVendu afficherArticle(String nomArticle) throws DALException {
+
+		ArticleVendu articleVendu = null;
+
+		// Obtenir une connexion
+		Connection cnx = ConnectionProvider.getConnection();
+
+		// Obtient une objet de commande (Statement) = ordre SQL
+		try {
+
+			// Paramétrer l'objet de commande
+
+			PreparedStatement pStmt = cnx.prepareStatement(AFFICHER_ARTICLE);
+			pStmt.setString(1, nomArticle);
+
+			// Execute l'ordre SQL
+			ResultSet rs = null;
+			rs = pStmt.executeQuery();
+
+			if (rs.next()) {
+				articleVendu = map(rs);
+			}
+
+			cnx.close();
+
 		} catch (SQLException sqle) {
 			sqle.printStackTrace();
 		}
-		return articlesVendus;
-	}
+
+		return articleVendu;
+	} 
 
 	public ArticleVendu map(ResultSet rs) throws SQLException {
 		ArticleVendu article = null;

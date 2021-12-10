@@ -16,7 +16,8 @@ public interface ArticleVenduDAO {
 	void insert(ArticleVendu articleVendu) throws DALException;
 	void delete(int id) throws DALException;
 	List<ArticleVendu> selectAll() throws DALException;
-	List<ArticleVendu> selectByUser(int id) throws DALException, SQLException;
-
+	ArticleVendu selectByUser(int id) throws DALException, SQLException;
+	ArticleVendu rechercher(String nomArticle) throws DALException;
+	ArticleVendu afficherArticle (String nomArticle) throws DALException;
 
 }

@@ -1,6 +1,6 @@
 package fr.eni.enchere.bo;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -15,10 +15,13 @@ public class ArticleVendu {
 	private int prixVente;
 	private boolean etatVente;
 	private Retrait LieuRetrait;
+	private Categorie categorie;	
 	private int idCategorie;
 
 	private List<Utilisateur> listeUtilisateur;
 	private List<Retrait> listeRetrait;
+	private List<Categorie> listeCategorie;
+
 
 	public ArticleVendu() {
 		// TODO Auto-generated constructor stub
@@ -63,8 +66,17 @@ public class ArticleVendu {
 		return listeRetrait;
 	}
 
+
 	public void setListeRetrait(List<Retrait> listeRetrait) {
 		this.listeRetrait = listeRetrait;
+	}
+
+	public List<Categorie> getListeCategorie() {
+		return listeCategorie;
+	}
+
+	public void setListeCategorie(List<Categorie> listeCategorie) {
+		this.listeCategorie = listeCategorie;
 	}
 
 	public int getIdCategorie() {
@@ -145,6 +157,14 @@ public class ArticleVendu {
 
 	public void setLieuRetrait(Retrait lieuRetrait) {
 		LieuRetrait = lieuRetrait;
+	}
+
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
 	}
 
 	@Override
