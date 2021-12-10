@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Utilisateur {
 
-	private int idUtilisateur;
+	private int noUtilisateur;
 	private String pseudo;
 	private String nom;
 	private String prenom;
@@ -25,11 +25,11 @@ public class Utilisateur {
 
 	// Getters/Setters
 	public int getIdUtilisateur() {
-		return idUtilisateur;
+		return noUtilisateur;
 	}
 
 	public void setIdUtilisateur(int noUtilisateur) {
-		this.idUtilisateur = noUtilisateur;
+		this.noUtilisateur = noUtilisateur;
 	}
 
 	public String getPseudo() {
@@ -149,7 +149,7 @@ public class Utilisateur {
 	}
 	public Utilisateur(int idUtilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue,
 			String codePostal, String ville, String motDePasse) {
-		this.idUtilisateur = idUtilisateur;
+		this.noUtilisateur = idUtilisateur;
 		this.pseudo = pseudo;
 		this.nom = nom;
 		this.prenom = prenom;
@@ -159,6 +159,13 @@ public class Utilisateur {
 		this.codePostal = codePostal;
 		this.ville = ville;
 		this.motDePasse = motDePasse;
+	}
+	
+	// Affichage avec credit
+	public Utilisateur(int idUtilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue,
+			String codePostal, String ville, String motDePasse, int credit) {
+		this(idUtilisateur, pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse);
+		this.credit = credit;
 	}
 
 	// Affichage du profil >> page infoVendeur et profilUtilisateur
@@ -177,7 +184,7 @@ public class Utilisateur {
 	public Utilisateur(int idUtilisateur, String pseudo, String nom, String prenom, String email, String telephone,
 			String rue, String codePostal, String ville, String motDePasse, int credit, boolean administrateur) {
 		this(pseudo, nom, prenom, email, telephone, rue, codePostal, ville);
-		this.idUtilisateur = idUtilisateur;
+		this.noUtilisateur = idUtilisateur;
 		this.motDePasse = motDePasse;
 		this.credit = credit;
 		this.administrateur = administrateur;
@@ -199,7 +206,7 @@ public class Utilisateur {
 
 	@Override
 	public String toString() {
-		return "Utilisateur [idUtilisateur=" + idUtilisateur + ", pseudo=" + pseudo + ", nom=" + nom + ", prenom="
+		return "Utilisateur [idUtilisateur=" + noUtilisateur + ", pseudo=" + pseudo + ", nom=" + nom + ", prenom="
 				+ prenom + ", email=" + email + ", telephone=" + telephone + ", rue=" + rue + ", codePostal="
 				+ codePostal + ", ville=" + ville + ", motDePasse=" + motDePasse + ", credit=" + credit
 				+ ", administrateur=" + administrateur + ", encheres=" + encheres + ", articles=" + articles + "]";

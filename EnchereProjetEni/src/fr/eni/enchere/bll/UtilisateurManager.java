@@ -94,16 +94,17 @@ public class UtilisateurManager {
 		}
 	}
 
-	public void update(String pseudo, String nom, String prenom, String email, String telephone, String rue,
-			String codePostal, String ville) throws BLLException {
-		
-		Utilisateur a = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, codePostal, ville);
-		
+	public void update( int idUtilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue,
+			String codePostal, String ville, String motDePasse) throws BLLException {
+		BLLException ex = new BLLException();
+	
+		Utilisateur a = new Utilisateur(idUtilisateur, pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse);
+	
 		try {
 			dao.update(a);
 		} catch (DALException e) {
 			e.printStackTrace();
-			BLLException ex = new BLLException();
+			
 			ex.ajouterErreur(e);
 			throw ex;
 		}
@@ -126,5 +127,6 @@ public class UtilisateurManager {
 					"Le pseudo est obligatoire et doit avoir une longueur comprise entre 1 et 30"));
 		}
 	}
+
 
 }
