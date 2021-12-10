@@ -43,7 +43,7 @@ public class UtilisateurManager {
 		}
 	}
 	
-	public Utilisateur afficherProfil(String pseudo) throws BLLException {
+	public Utilisateur affichageProfil(String pseudo) throws BLLException {
 
 		BLLException ex = new BLLException();
 		validationPseudo(pseudo, ex);

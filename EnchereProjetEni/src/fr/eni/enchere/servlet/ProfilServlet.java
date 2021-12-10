@@ -32,7 +32,7 @@ public class ProfilServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String pseudo = (String) session.getAttribute("pseudo");
 			try {
-				Utilisateur utilisateur = UtilisateurManager.getInstance().afficherProfil(pseudo);
+				Utilisateur utilisateur = UtilisateurManager.getInstance().affichageProfil(pseudo);
 				request.setAttribute("pseudo", pseudo);
 				String nom = utilisateur.getNom();
 				request.setAttribute("nom", nom);

@@ -31,7 +31,7 @@ public class ModifProfilUtilisateurServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String pseudo = (String) session.getAttribute("pseudo");
 		try {
-			Utilisateur utilisateur = UtilisateurManager.getInstance().afficherProfil(pseudo);
+			Utilisateur utilisateur = UtilisateurManager.getInstance().affichageProfil(pseudo);
 			request.setAttribute("pseudo", pseudo);
 			String nom = utilisateur.getNom();
 			request.setAttribute("nom", nom);
@@ -82,7 +82,7 @@ public class ModifProfilUtilisateurServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			String ancienPseudo = (String) session.getAttribute("pseudo");
 
-			int idUtilisateur = UtilisateurManager.getInstance().afficherProfil(ancienPseudo).getIdUtilisateur();
+			int idUtilisateur = UtilisateurManager.getInstance().affichageProfil(ancienPseudo).getIdUtilisateur();
 			UtilisateurManager.getInstance().update(idUtilisateur, pseudo, nom, prenom, email, tel, rue, cp, ville,
 					mdp);
 		} catch (BLLException e) {

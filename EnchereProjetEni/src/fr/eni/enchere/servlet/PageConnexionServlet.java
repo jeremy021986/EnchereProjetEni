@@ -46,9 +46,9 @@ public class PageConnexionServlet extends HttpServlet {
 		String leMdp = null;
 		
 		try {
-			leProfil = UtilisateurManager.getInstance().afficherProfil(pseudo);
+			leProfil = UtilisateurManager.getInstance().affichageProfil(pseudo);
 			if (leProfil != null) {
-				leMdp = UtilisateurManager.getInstance().afficherProfil(pseudo).getMotDePasse();
+				leMdp = UtilisateurManager.getInstance().affichageProfil(pseudo).getMotDePasse();
 			}
 		} catch (BLLException e) {
 			// TODO Auto-generated catch block
