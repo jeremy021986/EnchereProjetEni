@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
       <div class="container">
         <a class="navbar-brand" href="#">Les objets sont nos amis</a>
         <button
@@ -38,8 +38,10 @@
            <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
            </li>
+             <li class="nav-item"><a class="nav-link"
+                        href="PublicationVente">Enchères</a></li>
            <li class="nav-item">
-              <a class="nav-link" href="PageConnexion">s'inscrire / se connecter</a>
+              <a class="nav-link" href="PageConnexion">S'inscrire / Se connecter</a>
            </li>
          </ul>
       </div>
@@ -71,13 +73,18 @@
 		</select>
 	
 		<!-- Insérer une image des Alpes --> 
-		<div class="w3-card-4">
-		    <img src="150.png" alt="Alps">
-		    <div class="w3-container w3-center">
-		      <p>Meuble</p>
-		    </div>
-		  </div>
- </div>
+		<div class="card">
+            <img src="https://via.placeholder.com/200x80/ccc/444"
+                class="card-img-top" alt="lorem" />
+            <div class="card-body">
+                <h5 class="card-title">Article n°3</h5>
+                <p class="card-text">Some quick example text to build on the
+                    card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go to Article</a>
+            </div>
+        </div>
+    </div>
+ 
  </body>
  	<br>
 	<br>
@@ -98,7 +105,7 @@
 	<br>
 	<br>
 	<br>
- <footer class="container-fluid bg-dark p-5 text-white">
+ <footer class="container-fluid bg-success p-2 text-white">
       <div class="container text-center">&copy; 2021–2021 copyright</div>
  </footer>
  </html>

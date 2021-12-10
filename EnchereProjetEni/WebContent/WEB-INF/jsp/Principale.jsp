@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
       <div class="container">
         <a class="navbar-brand" href="#">Les objets sont nos amis</a>
         <button
@@ -38,6 +38,8 @@
            <li class="nav-item">
               <a class="nav-link" href="Profil">Mon Profil</a>
            </li>
+             <li class="nav-item"><a class="nav-link"
+                        href="PublicationVente">Enchères</a></li>
            <li class="nav-item">
               <a class="nav-link" href="Deconnection">Déconnexion</a>
            </li>
@@ -174,7 +176,7 @@
 			</div>
 		</div>
 	</body>
-	<footer class="container-fluid bg-dark p-5 text-white">
+<footer class="container-fluid bg-success p-2 text-white">
       <div class="container text-center">&copy; 2021–2021 copyright</div>
-    </footer>
-</html>
+ </footer>
+ </html>

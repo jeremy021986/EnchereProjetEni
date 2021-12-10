@@ -15,7 +15,7 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
       <div class="container">
         <a class="navbar-brand" href="#">Les objets sont nos amis</a>
         <button
@@ -41,6 +41,8 @@
            <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
            </li>
+             <li class="nav-item"><a class="nav-link"
+                        href="PublicationVente">Enchères</a></li>
            <li class="nav-item">
               <a class="nav-link" href="PageConnexion">S'inscrire / Se connecter</a>
            </li>
@@ -79,10 +81,10 @@
 					Se souvenir de moi
 				</label>
 			</div>
-			<button class="w-100 btn btn-lg btn-dark" type="submit">Connection</button> 
+			<button class="w-100 btn btn-lg btn-success" type="submit">Connexion</button> 
 			<br>
 			<br>
-			<button class="w-100 btn btn-lg btn-dark" type="submit">Créer un compte</button>
+			<button class="w-100 btn btn-lg btn-success" type="submit">Créer un compte</button>
 			
 		</form>
 	</main>
@@ -98,7 +100,7 @@
 	<br>
 	<br>
 </body>
-<footer class="container-fluid bg-dark p-5 text-white">
-	<div class="container text-center">&copy; 2021–2021 copyright</div>
-</footer>
-</html>
+<footer class="container-fluid bg-success p-2 text-white">
+      <div class="container text-center">&copy; 2021–2021 copyright</div>
+ </footer>
+ </html>
