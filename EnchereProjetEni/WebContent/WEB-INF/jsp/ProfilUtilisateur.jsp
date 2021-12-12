@@ -16,7 +16,33 @@
       
     <title>Document</title>
 </head>
-<body>
+<body style="background-color:rgba(237, 253, 239);">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#">Les objets sont nos amis</a>
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- ms-auto = margin-left:auto -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active"
+                        aria-current="page" href="accueil">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Profil">Profil</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link"
+                        href="PublicationVente">Enchères</a></li>
+                    <li class="nav-item"><a class="nav-link" href="PageConnexion">S'inscrire
+                            / Se connecter</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <h1> ENI-Encheres</h1>
   	<h4>Pseudo :</h4><c:out value="${sessionScope.pseudo}"/><br>
   	<h4> Nom :</h4><c:out value="${requestScope.nom}"/><br>
@@ -28,11 +54,15 @@
     <h4>Ville :</h4><c:out value="${requestScope.ville}"/><br>
     
     
+    <div class="d-grid  gap-2 d-md-flex justify-content p-4">
     <a href="./ModifProfilUtilisateur"><button type="button"
-					class="btn btn-primary btn-block">Modifier mon profil</button></a> <br />
+					class="btn btn-success btn-block">Modifier mon profil</button></a> <br />
 
 	<a href="./PagePrincipale"><button type="button"
-					class="btn btn-primary btn-block">Retour</button></a>
+					class="btn btn-success btn-block">Retour</button></a></div>
+					
+					<footer class="container-fluid bg-success p-2 text-white">
+      <div class="container text-center">&copy; 2021 copyright</div>
+ </footer>
 </body>
 </html>
-
