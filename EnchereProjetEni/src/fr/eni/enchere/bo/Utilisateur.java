@@ -189,6 +189,14 @@ public class Utilisateur {
 		this.credit = credit;
 		this.administrateur = administrateur;
 	}
+	
+	public Utilisateur(String pseudo, String nom, String prenom, String email, String telephone,
+			String rue, String codePostal, String ville, String motDePasse, int credit, boolean administrateur) {
+		this(pseudo, nom, prenom, email, telephone, rue, codePostal, ville);
+		this.motDePasse = motDePasse;
+		this.credit = credit;
+		this.administrateur = administrateur;
+	}
 
 	// Constructeur utilisateur pour vérification pseudo/mdp
 	public Utilisateur(String pseudo, String motDePasse) {
