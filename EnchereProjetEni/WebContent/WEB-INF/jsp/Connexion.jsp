@@ -9,7 +9,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
 
 <title>Connexion</title>
 
@@ -51,7 +55,7 @@
    </div>
 </nav>
 
-<div class="container my-6 col-6 p-5">
+<div class="container col-xs-12 col-sm-12 col-md-6 col-lg-6">
 	<h1>ENI-Encheres</h1>
 	<main class="form-signin">
 		<form action="./PageConnexion" method="post">
@@ -81,12 +85,14 @@
 					Se souvenir de moi
 				</label>
 			</div>
-			<button class="w-100 btn btn-lg btn-success" type="submit">Connexion</button> 
+				</form>
+				<!--  Rajouter le href pour "créer compte" les boutons -->
+			<a href=""></a><button class="w-100 btn btn-lg btn-success" type="submit">Connexion</button> 
 			<br>
 			<br>
-			<button class="w-100 btn btn-lg btn-success" type="submit">Créer un compte</button>
+			<button class="w-100 btn btn-lg btn-success" type="submit" >Créer un compte</button>
 			
-		</form>
+	
 	</main>
 
 	<a href="https://example.com">Mot de passe oublié</a>
@@ -101,6 +107,6 @@
 	<br>
 </body>
 <footer class="container-fluid bg-success p-2 text-white">
-      <div class="container text-center">&copy; 2021–2021 copyright</div>
+      <div class="container text-center">&copy; 2021 copyright</div>
  </footer>
  </html>
