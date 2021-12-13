@@ -65,33 +65,33 @@ public class ModifProfilUtilisateurServlet extends HttpServlet {
 	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		String pseudo = request.getParameter("modifPseudo");
-		System.out.println(pseudo);
-		String nom = request.getParameter("modifNom");
-		String prenom = request.getParameter("modifPrenom");
-		String email = request.getParameter("modifEmail");
-		String tel = request.getParameter("modifTel");
-		String rue = request.getParameter("modifRue");
-		String cp = request.getParameter("modifCp");
-		String ville = request.getParameter("modifVille");
-		String mdp = request.getParameter("mdp");
-
-		try {
-			HttpSession session = request.getSession();
-			String ancienPseudo = (String) session.getAttribute("pseudo");
-
-			int idUtilisateur = UtilisateurManager.getInstance().affichageProfil(ancienPseudo).getIdUtilisateur();
-			UtilisateurManager.getInstance().update(idUtilisateur, pseudo, nom, prenom, email, tel, rue, cp, ville,
-					mdp);
-		} catch (BLLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		RequestDispatcher aiguilleur = getServletContext().getRequestDispatcher("/WEB-INF/jsp/Principale.jsp");
-		aiguilleur.forward(request, response);
-		// response.sendRedirect("./PagePrincipale");
-	}
-
+            throws ServletException, IOException {
+        String pseudo = request.getParameter("modifPseudo");
+        System.out.println(pseudo);
+        String nom = request.getParameter("modifNom");
+        String prenom = request.getParameter("modifPrenom");
+        String email = request.getParameter("modifEmail");
+        String tel = request.getParameter("modifTel");
+        String rue = request.getParameter("modifRue");
+        String cp = request.getParameter("modifCp");
+        String ville = request.getParameter("modifVille");
+        String mdp = request.getParameter("mdpActuel");
+        String modifmdp = request.getParameter("modifMdp");
+        String confirmmdp = request.getParameter("modifConfirmMdp");
+        
+            try {
+                HttpSession session = request.getSession();
+                String ancienPseudo = (String) session.getAttribute("pseudo");
+                int idUtilisateur = UtilisateurManager.getInstance().affichageProfil(ancienPseudo).getIdUtilisateur();
+                UtilisateurManager.getInstance().update(idUtilisateur, pseudo, nom, prenom, email, tel, rue, cp, ville,
+                        mdp);
+            } catch (BLLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        RequestDispatcher aiguilleur = getServletContext().getRequestDispatcher("/WEB-INF/jsp/Principale.jsp");
+        aiguilleur.forward(request, response);
+        // response.sendRedirect("./PagePrincipale");
+        
+    }
 }
