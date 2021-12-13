@@ -142,6 +142,6 @@
 <br>
 <br>
 <footer class="container-fluid bg-success p-2 text-white">
-	<div class="container text-center">&copy;2021 copyright</div>
+	<div class="container text-center">&copy; 2021 copyright</div>
 </footer>
 </html>
