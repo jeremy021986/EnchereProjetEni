@@ -38,13 +38,14 @@
            <li class="nav-item">
               <a class="nav-link" href="#">Profil</a>
            </li>
-           <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-           </li>
+          
              <li class="nav-item"><a class="nav-link"
                         href="PublicationVente">Enchères</a></li>
            <li class="nav-item">
               <a class="nav-link" href="PageConnexion">S'inscrire / Se connecter</a>
+           </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nous Contacter</a>
            </li>
          </ul>
       </div>
@@ -64,15 +65,20 @@
 				width="72" height="57">
 			<h1 class="h3 mb-3 fw-normal">Se connecter</h1>
 
-			<div class="form-floating">
-				<label for="pseudo">Identifiant : </label> <input type="text" id="pseudo"
+			 <div class="form-group">
+				<label for="pseudo"></label> <input type="text" id="pseudo"
             name="pseudo" 
-					class="form-control" id="pseudo" name="pseudo" placeholder="Votre pseudo">
-			</div>
+					class="form-control" id="nom" name="pseudo" placeholder="Votre pseudo">
+			</div> 
+			
+		<!-- 	<div class="form-group">
+			<label for="pseudo"></label><input type="text" 
+			class="form-control" id="nom" placeholder="pseudo">
+			-->
 			<br>
-			<div class="form-floating">
-				<label for="motDePasse">Mot de passe :</label> <input
-					type="password" class="form-control" id="motDePasse"  name="motDePasse"
+			
+			<div class="form-group">
+				<label for="motDePasse"></label> <input type="password" class="form-control" id="motDePasse"  name="motDePasse"
 					placeholder="Mot de passe">
 			</div>
 
@@ -84,10 +90,14 @@
 			<button class="w-100 btn btn-lg btn-success" type="submit">Connexion</button> 
 			<br>
 			<br>
-			<button class="w-100 btn btn-lg btn-success" type="submit">Créer un compte</button>
 			
-		</form>
+		</form>  
+		<a href="./PageInscription"><button  class="w-100 btn btn-lg btn-success"  type="submit">Créer un compte</button></a>
+		
 	</main>
+	
+	
+	
 
 	<a href="https://example.com">Mot de passe oublié</a>
 </div>
