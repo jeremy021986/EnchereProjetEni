@@ -33,7 +33,7 @@
 					<li class="nav-item"><a class="nav-link"
 						href="PublicationVente">Vendre un article</a></li>
 					<li class="nav-item"><a class="nav-link" href="Profil">Mon
-							Profil</a></li>
+							Profil :<c:out value="${sessionScope.pseudo}"/></a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="PublicationVente">Enchères</a></li>
 					<li class="nav-item"><a class="nav-link" href="Deconnection">Déconnexion</a>

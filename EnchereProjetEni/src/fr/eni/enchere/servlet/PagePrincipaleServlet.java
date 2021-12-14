@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class PagePrincipaleServlet
@@ -19,7 +20,8 @@ public class PagePrincipaleServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		HttpSession session =request.getSession();
+		String pseudo = (String) session.getAttribute("pseudo");
 		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/Principale.jsp").forward(request, response);
 	}
 
