@@ -67,7 +67,7 @@
 					<div class="input-field mt-3">
 						<form action="./PageInscription" method="post" class="miseaprix">
 							<label for="mPrix">Filtre:</label> <input class="input"
-								type="number" name="minPrix" id="maxPrix" step="5" max="10000"
+								type="text" name="filtre" 
 								required> <br> <label class="mt-3" for="email">Categorie
 								: </label> <select name="pets" id="pet-select">
 								<option value="">--Toutes--</option>
