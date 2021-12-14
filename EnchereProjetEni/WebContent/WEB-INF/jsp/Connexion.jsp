@@ -67,8 +67,7 @@
 
 			 <div class="form-group">
 				<label for="pseudo"></label> <input type="text" id="pseudo"
-            name="pseudo" 
-					class="form-control" id="nom" name="pseudo" placeholder="Votre pseudo">
+            name="pseudo" class="form-control" placeholder="Votre pseudo">
 			</div> 
 			
 		<!-- 	<div class="form-group">

@@ -41,7 +41,7 @@
               <a class="nav-link" href="#">Contact</a>
            </li>
            <li class="nav-item">
-              <a class="nav-link" href="PageConnexion">S'inscrire / Se connecter</a>
+              <a class="nav-link" href="PageConnexion">s'inscrire / se connecter</a>
            </li>
          </ul>
       </div>
@@ -54,11 +54,12 @@
 
 <div class="input-group col-4 py-4">
 	  	<div class="form-group col-my-4">
-	      <label for="inputPseudo">Pseudo:</label><br>
+	      <label for="inputPseudo">Pseudo:</label>
+	      <input type="text" class="form-control" id="modifPseudo" name="modifPseudo" value="${requestScope.pseudo}" required>
 	    </div>
 	    <div class="form-group col-my-4">
 	      <label for="inputModifNom">Nom:</label>
-	      <input type="text" class="form-control" id="inputModifNom" placeholder="Dupond" required>
+	      <input type="text" class="form-control" id="modifNom" name="modifNom" value="${requestScope.nom}" required>
 	    </div>
     </div>
   
@@ -67,11 +68,11 @@
   <div class="input-group">
     <div class="form-group col-my-4">
       <label for="inputModifPrenom">Prénom:</label>
-      <input type="text" class="form-control" id="inputModifPrenom" placeholder="Camille" required>
+      <input type="text" class="form-control" id="modifPrenom" name="modifPrenom" value="${requestScope.prenom}" required>
     </div>
     <div class="form-group col-my-4">
       <label for="inputModifEmail">Email:</label>
-      <input type="email" class="form-control" id="inputModifEmail" placeholder="exemple@outlook.fr" required>
+      <input type="email" class="form-control" id="modifEmail" name="modifEmail" value="${requestScope.email}" required>
     </div>
   </div>
   
@@ -80,11 +81,11 @@
   <div class="input-group">
     <div class="form-group col-my-4">
       <label for="inputModifTel">Telephone:</label>
-      <input type="tel" class="form-control" id="inputModifTel" placeholder="0623637303" required>
+      <input type="tel" class="form-control" id="modifTel" name="modifTel" value="${requestScope.tel}" required>
     </div>
     <div class="form-group col-my-4">
       <label for="inputModifRue">Rue:</label>
-      <input type="text" class="form-control" id="inputModifRue" placeholder="9 Rue Gambetta" required>
+      <input type="text" class="form-control" id="modifRue" name="modifRue" value="${requestScope.rue}" required>
     </div>
   </div>
   
@@ -93,18 +94,18 @@
   <div class="input-group">
 	    <div class="form-group col-my-4">
 	      <label for="inputModifCP">Code postal:</label>
-	      <input type="number" class="form-control" id="inputModifCP" placeholder="44000" required>
+	      <input type="number" class="form-control" id="modifCp" name="modifCp" value="${requestScope.cp}" required>
 	    </div>
 	    <div class="form-group col-my-4">
 	      <label for="inputModifVille">Ville:</label>
-	      <input type="text" class="form-control" id="inputModifVille" placeholder="Nantes" required>
+	      <input type="text" class="form-control" id="modifVille" name="modifVille" value="${requestScope.ville}" required>
 	    </div>
   </div>
   
 	<div class="input-group">
 		<div class="form-group col-my-4">
 			<label for="inputCurMDP">Mot de passe actuel:</label>
-			<input type="password" class="form-control" id="inputCurMDP" placeholder="*****" required>
+			<input type="password" class="form-control" id="mdpActuel" name="mdpActuel" value="${requestScope.mdp}" required>
 		</div>
 	</div>
 
@@ -112,26 +113,26 @@
 	<div class="input-group">
 		<div class="form-group col-my-4">
 			<label for="inputNewMDP">Nouveau mot de passe:</label>
-			<input type="password" class="form-control" id="inputNewMDP" placeholder="*****" required>
+			<input type="password" class="form-control" id="modifMdp" name="modifMdp" value="${requestScope.mdp}" required>
 		</div>
 		<div class="form-group col-my-4">
 			<label for="inputConfirmMDP">Confirmation:</label>
-			<input type="password" class="form-control" id="inputConfirmMDP" placeholder="*****" required>
+			<input type="password" class="form-control" id="modifConfirmMdp" name="modifConfirmMdp"value="${requestScope.mdp}" required>
 		</div>
 	</div>
     <br>
-    <div>Crédit:</div>
+    <div>Crédit:${requestScope.credit}</div>
     <br>
     <div class="input-group">
 		<div class="form-group col-my-4">
 			   	<button type="submit" class="btn btn-dark" name="sEnregistrer">Enregistrer</button>
 		</div>
-		<div class="form-group col-my-4">
-	    	<a href="./SupProfil"><button type="submit" class="btn btn-dark">Supprimer</button></a>
-		</div>
   	</div>
   	
   </form>
+  <div class="form-group col-my-4">
+	    	<a href="./SupProfil"><button type="submit" class="btn btn-dark">Supprimer mon compte</button></a>
+		</div>
 </div>
 
 

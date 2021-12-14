@@ -62,11 +62,11 @@
 	<div class="row">
 	  	<div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
 	      <label for="inputPseudo">Pseudo:</label>
-	      <input type="text" class="form-control" id="inputPseudo" placeholder="Pseudo" required>
+	      <input type="text" class="form-control" id="creaPseudo" name="creaPseudo" placeholder="Pseudo" required>
 	    </div>
 	    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
 	      <label for="inputNom">Nom:</label>
-	      <input type="text" class="form-control" id="inputNom" placeholder="Dupond" required>
+	      <input type="text" class="form-control" id="creaNom" name="creaNom" placeholder="Dupond" required>
 	    </div>
 	    </div>
     </div>
@@ -77,11 +77,11 @@
   <div class="row">
     <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <label for="inputPrenom">Prénom:</label>
-      <input type="text" class="form-control" id="inputPrenom" placeholder="Camille" required>
+      <input type="text" class="form-control" id="creaPrenom" name="creaPrenom" placeholder="Camille" required>
     </div>
     <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <label for="inputEmail">Email:</label>
-      <input type="email" class="form-control" id="inputEmail" placeholder="exemple@outlook.fr" required>
+      <input type="email" class="form-control" id="creaEmail" name="creaEmail" placeholder="exemple@outlook.fr" required>
     </div>
     </div>
   </div>
@@ -92,11 +92,11 @@
   <div class="row">
     <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <label for="inputTelephone">Telephone:</label>
-      <input type="tel" class="form-control" id="inputTelephone" placeholder="0623637303" required>
+      <input type="tel" class="form-control" id="creaTel" name="creaTel" placeholder="0623637303" required>
     </div>
     <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <label for="inputRue">Rue:</label>
-      <input type="text" class="form-control" id="inputRue" placeholder="9 Rue Gambetta" required>
+      <input type="text" class="form-control" id="creaRue" name="creaRue" placeholder="9 Rue Gambetta" required>
     </div>
     </div>
   </div>
@@ -107,11 +107,11 @@
   <div class="row">
 	    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
 	      <label for="inputCP">Code postal:</label>
-	      <input type="number" class="form-control" id="inputCP" placeholder="44000" required>
+	      <input type="number" class="form-control" id="creaCP" name="creaCP" placeholder="44000" required>
 	    </div>
 	    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
 	      <label for="inputVille">Ville:</label>
-	      <input type="text" class="form-control" id="inputVille" placeholder="Nantes" required>
+	      <input type="text" class="form-control" id="creaVille" name="creaVille" placeholder="Nantes" required>
 	    </div>
 	    </div>
   </div>
@@ -122,11 +122,11 @@
   <div class="row">
 	  <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
 	    <label for="inputPassword">Mot de passe:</label>
-	    <input type="password" class="form-control" id="inputPassword" placeholder="8 caractères minimum" minlength="8" required>
+	    <input type="password" class="form-control" id="creaMdp" name="creaMdp" placeholder="8 caractères minimum" minlength="8" required>
 	  </div>
 	  <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
 	    <label for="inputPassword2">Confirmation:</label>
-	    <input type="text" class="form-control" id="inputPassword2" placeholder="8 caractères minimum" minlength="8" required>
+	    <input type="text" class="form-control" id="confirmMdp" name="confirmMdp" placeholder="8 caractères minimum" minlength="8" required>
 	  </div>
 	  </div>
   </div>
@@ -138,13 +138,14 @@
 	  <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
 	   	<button type="submit" class="btn btn-success">Créer</button>
 	  </div>
-	  <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-	    <a href="accueil"><button type="submit" class="btn btn-success">Annuler</button></a>
-	  </div>
+	  
 	  </div>
   </div>
  
  </form>
+ <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+	    <a href="./accueil"><button type="submit" class="btn btn-success">Annuler</button></a>
+	  </div>
  </div>
  </div>
  </div>
