@@ -50,7 +50,7 @@
 
 				<div class="container col-xs-12 col-sm-12 col-md-4 col-lg-4">
 					<input class="form-check-input" type="radio" name="genre"
-						id="homme" value="homme" /> <label class="form-check-label"
+						id="homme" value="homme" checked> <label class="form-check-label"
 						for="homme">Achats</label> <br> <input
 						class="form-check-input" type="checkbox" name="achat[]"
 						id="enchereOuverte" value="enchereOuverte" /> <label
