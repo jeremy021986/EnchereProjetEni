@@ -65,9 +65,6 @@
 
 				<br>
 
-
-
-
 				<div class="container col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
 					<form action="" method="get" class="form-example">
 						<div class="form-example">
