@@ -69,6 +69,10 @@ public class UtilisateurManager {
 			throw ex;
 		}
 	}
+	
+	public static List<String> selectAllPseudos() throws DALException {
+        return utilisateurDAO.getAllPseudos();
+    }
 
 	public  void delete(int idUtilisateur) throws BLLException {
 		try {

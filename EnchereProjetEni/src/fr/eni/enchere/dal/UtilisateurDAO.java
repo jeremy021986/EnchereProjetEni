@@ -16,5 +16,14 @@ public interface UtilisateurDAO {
 	public List<Utilisateur> selectAll() throws DALException;
 	Utilisateur selectUtilisateurByPseudo(String pseudo) throws DALException;
 	Utilisateur afficherProfil(String pseudo) throws DALException;
+	List<String> getAllPseudos() throws DALException;
+	static boolean verifPseudo(String parameter) {
+		
+		return false;
+	}
+	static boolean verifMail(String parameter) {
+		
+		return false;
+	}
 	
 }

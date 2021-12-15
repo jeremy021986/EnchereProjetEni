@@ -24,10 +24,13 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String SELECT_BY_PSEUDO = "SELECT * FROM UTILISATEURS WHERE pseudo = ?";
 	private static final String SELECT_ALL = "SELECT * FROM UTILISATEURS";
 	private static final String AFFICHER_PROFIL = "SELECT no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit from UTILISATEURS where pseudo = ?";
-	
+	private static final String SELECT_ALL_PSEUDOS = "SELECT pseudo FROM UTILISATEURS";
+	private static Object cnx;
+
 	public UtilisateurDAOJdbcImpl() {
 
 	}
+
 	public Utilisateur afficherProfil(String pseudo) throws DALException {
 
 		Utilisateur utilisateur = null;
@@ -59,108 +62,108 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 		return utilisateur;
 	}
-	
-	 public List<Utilisateur> selectAll() throws DALException {
-		 
-		 List<Utilisateur> utilisateurs = new ArrayList<>();
-	       
-		 try {Connection cnx = ConnectionProvider.getConnection();
-	       
-	        
-	            Statement stmt = cnx.createStatement();
-	     
-	            stmt.execute(SELECT_ALL);
-	            ResultSet rs = stmt.getResultSet();
-	            while (rs.next()) {
-	                utilisateurs.add(maps(rs));
-	            }
-	            cnx.close();
-		 }
-		 
-		 catch (SQLException e) {
-			 e.printStackTrace();
-			 throw new DALException(e.getMessage());
-		 }
-	        return utilisateurs;
-	    }
-	
-	
+
+	public List<Utilisateur> selectAll() throws DALException {
+
+		List<Utilisateur> utilisateurs = new ArrayList<>();
+
+		try {
+			Connection cnx = ConnectionProvider.getConnection();
+
+			Statement stmt = cnx.createStatement();
+
+			stmt.execute(SELECT_ALL);
+			ResultSet rs = stmt.getResultSet();
+			while (rs.next()) {
+				utilisateurs.add(maps(rs));
+			}
+			cnx.close();
+		}
+
+		catch (SQLException e) {
+			e.printStackTrace();
+			throw new DALException(e.getMessage());
+		}
+		return utilisateurs;
+	}
+
 	public Utilisateur selectUtilisateurByPseudo(String pseudo) throws DALException {
 		Utilisateur utilisateur = null;
-		
-			 try{Connection cnx = ConnectionProvider.getConnection();
-			
-        
-            PreparedStatement stmt = cnx.prepareStatement(SELECT_BY_PSEUDO);
-            stmt.setString(1, pseudo);
-            stmt.execute();
-            ResultSet rs = stmt.getResultSet();
-            if (rs.next()) {
-                utilisateur = maps(rs);
-            }
-            cnx.close();
-			 }
-			 
-			 catch (SQLException e) {
-				 e.printStackTrace();
-				 throw new DALException(e.getMessage());
-			 }
-        
-        return utilisateur;
-    }
-	public Utilisateur rechercher(String pseudo, String motDePasse) throws DALException {
-		
-		Connection cnx=null;
-		PreparedStatement pstmt=null;
-		ResultSet rs=null;
-		Utilisateur user = new Utilisateur();
-		 
+
 		try {
-			cnx= ConnectionProvider.getConnection();
-			pstmt=cnx.prepareStatement(RECHERCHER);
+			Connection cnx = ConnectionProvider.getConnection();
+
+			PreparedStatement stmt = cnx.prepareStatement(SELECT_BY_PSEUDO);
+			stmt.setString(1, pseudo);
+			stmt.execute();
+			ResultSet rs = stmt.getResultSet();
+			if (rs.next()) {
+				utilisateur = maps(rs);
+			}
+			cnx.close();
+		}
+
+		catch (SQLException e) {
+			e.printStackTrace();
+			throw new DALException(e.getMessage());
+		}
+
+		return utilisateur;
+	}
+
+	public Utilisateur rechercher(String pseudo, String motDePasse) throws DALException {
+
+		Connection cnx = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Utilisateur user = new Utilisateur();
+
+		try {
+			cnx = ConnectionProvider.getConnection();
+			pstmt = cnx.prepareStatement(RECHERCHER);
 			pstmt.setString(1, pseudo);
 			pstmt.setString(2, motDePasse);
-			rs=pstmt.executeQuery();
-		if (rs.next()){
-			rs.getString("pseudo");
-			user.setPseudo(rs.getString("pseudo"));
-			rs.getString("motDePasse");
-			user.setMotDePasse(rs.getString("motDePasse"));
-			rs.getString("nom");
-			user.setNom(rs.getString("nom"));
-			rs.getString("prenom");
-			user.setPrenom(rs.getString("prenom"));
-			rs.getString("email");
-			user.setEmail(rs.getString("email"));
-			rs.getString("telephone");
-			user.setTelephone(rs.getString("telephone"));
-			rs.getString("rue");
-			user.setRue(rs.getString("rue"));
-			rs.getString("codePostal");
-			user.setCodePostal(rs.getString("codePostal"));
-			rs.getString("ville");
-			user.setVille(rs.getString("ville"));
-			rs.getInt("Credit");
-			user.setCredit(Integer.parseInt(rs.getString("Credit")));
-		}
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				rs.getString("pseudo");
+				user.setPseudo(rs.getString("pseudo"));
+				rs.getString("motDePasse");
+				user.setMotDePasse(rs.getString("motDePasse"));
+				rs.getString("nom");
+				user.setNom(rs.getString("nom"));
+				rs.getString("prenom");
+				user.setPrenom(rs.getString("prenom"));
+				rs.getString("email");
+				user.setEmail(rs.getString("email"));
+				rs.getString("telephone");
+				user.setTelephone(rs.getString("telephone"));
+				rs.getString("rue");
+				user.setRue(rs.getString("rue"));
+				rs.getString("codePostal");
+				user.setCodePostal(rs.getString("codePostal"));
+				rs.getString("ville");
+				user.setVille(rs.getString("ville"));
+				rs.getInt("Credit");
+				user.setCredit(Integer.parseInt(rs.getString("Credit")));
+			}
 		} catch (SQLException e) {
-			
-				throw new DALException ("Probleme - rechercherUtilisateur - " + e.getMessage());
-		
-		}finally{
-			try{
-				if (pstmt!=null) pstmt.close();
-				if (cnx!=null) cnx.close();
+
+			throw new DALException("Probleme - rechercherUtilisateur - " + e.getMessage());
+
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (cnx != null)
+					cnx.close();
 			} catch (SQLException e) {
-					throw new DALException ("Probleme - FermerConnexion - " + e.getMessage());
+				throw new DALException("Probleme - FermerConnexion - " + e.getMessage());
 			}
 
 		}
 		return user;
-		
+
 	}
-	
-	
 
 	public void insert(Utilisateur ajoutUtilisateur) throws DALException {
 
@@ -222,11 +225,11 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	public void update(Utilisateur MajUtilisateur) throws DALException {
 		// TODO Auto-generated method stub
 		Connection cnx = ConnectionProvider.getConnection();
-		try  {
-			
+		try {
+
 			PreparedStatement pStmt = cnx.prepareStatement(UPDATE_USER);
 			pStmt.setString(1, MajUtilisateur.getPseudo());
-			System.out.println( MajUtilisateur.getPseudo());
+			System.out.println(MajUtilisateur.getPseudo());
 			pStmt.setString(2, MajUtilisateur.getNom());
 			pStmt.setString(3, MajUtilisateur.getPrenom());
 			pStmt.setString(4, MajUtilisateur.getEmail());
@@ -237,7 +240,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			pStmt.setString(9, MajUtilisateur.getMotDePasse());
 
 			pStmt.setInt(10, MajUtilisateur.getIdUtilisateur());
-System.out.println(pStmt);
+			System.out.println(pStmt);
 			pStmt.executeUpdate();
 
 			cnx.close();
@@ -273,23 +276,75 @@ System.out.println(pStmt);
 		}
 
 	}
-	
-	   private Utilisateur maps(ResultSet rs) throws SQLException {
-		   Utilisateur utilisateur = null;
-			int idUtilisateur = rs.getInt("no_utilisateur");
-			String pseudo = rs.getString("pseudo");
-			String nom = rs.getString("nom");
-			String prenom = rs.getString("prenom");
-			String email = rs.getString("email");
-			String telephone = rs.getString("telephone");
-			String rue = rs.getString("rue");
-			String code_postal = rs.getString("code_postal");
-			String ville = rs.getString("ville");
-			String motDePasse = rs.getString("mot_de_passe");
-			int credit = rs.getInt("credit");
 
-			utilisateur = new Utilisateur(idUtilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, motDePasse, credit);
+	public List<String> getAllPseudos() throws DALException {
+		List<String> pseudos = new ArrayList<>();
+		try (Connection cnx = ConnectionProvider.getConnection()) {
+			PreparedStatement statement = cnx.prepareStatement(SELECT_ALL_PSEUDOS);
+			ResultSet rs = statement.executeQuery();
+			while (rs.next()) {
+				pseudos.add(rs.getString("pseudo"));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return pseudos;
+	}
 
-			return utilisateur;
-}
+	private Utilisateur maps(ResultSet rs) throws SQLException {
+		Utilisateur utilisateur = null;
+		int idUtilisateur = rs.getInt("no_utilisateur");
+		String pseudo = rs.getString("pseudo");
+		String nom = rs.getString("nom");
+		String prenom = rs.getString("prenom");
+		String email = rs.getString("email");
+		String telephone = rs.getString("telephone");
+		String rue = rs.getString("rue");
+		String code_postal = rs.getString("code_postal");
+		String ville = rs.getString("ville");
+		String motDePasse = rs.getString("mot_de_passe");
+		int credit = rs.getInt("credit");
+
+		utilisateur = new Utilisateur(idUtilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville,
+				motDePasse, credit);
+
+		return utilisateur;
+	}
+
+//méthode pour vérifier que le pseudo soit unique
+	@SuppressWarnings("null")
+	public static boolean verifPseudo(String pseudo) {
+		boolean i = false;
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			Connection cnx = ConnectionProvider.getConnection();
+			PreparedStatement pStmt = cnx.prepareStatement("select * from UTILISATEURS WHERE pseudo = ?;");
+			pstmt.setString(1, pseudo);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+
+				System.out.println("Ce pseudo est déjà utilisé.");
+			} else {
+				i = true;
+
+			}
+		} catch (SQLException e) {
+
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (cnx != null)
+					((Connection) cnx).close();
+			} catch (SQLException e) {
+
+			}
+		}
+
+		return i;
+	}
+
 }
