@@ -66,7 +66,7 @@
 				<br>
 
 				<div class="container col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
-					<form action="" method="get" class="form-example">
+					<form action="./PublicationVente" method="post" class="form-example">
 						<div class="form-example">
 							<label for="name">Article :</label> <input type="text"
 								name="article" id="article" required>
@@ -83,48 +83,49 @@
 						<br>
 						 <label for="email">Description :</label> <input
 							type="text" name="description" id="description" required>
-					</form>
+					
 					  
 					<div class="input-field mt-3">
 						<label for="mPrix">Mise à prix :</label> <input class="input"
-							type="number" name="minPrix" id="maxPrix" step="5" max="10000"
+							type="number" name="prixInitial" id="PrixInitial" step="5" max="10000"
 							required>
 					</div>
 					<div class="mt-3">
 					<label for="start">Début de l'enchère:</label> <input type="date"
-						id="start" name="trip-start" value="2021-12-17" min="2021-12-17"
+						id="debutEnchere" name="debutEnchere" value="2021-12-17" min="2021-12-17"
 						max="2022-12-31">
 						</div>
 					<div class="mt-3">	
 						<label
 						for="start">Fin de l'enchère:</label> <input type="date"
-						id="start" name="trip-start" value="2021-12-17" min="2021-12-17"
+						id="finEnchere" name="finEnchere" value="2021-12-17" min="2021-12-17"
 						max="2022-12-31">
 					</div>
 					<!-- Container pour le bloc retrait -->
 					<label class="mt-3" for="start">Retrait: </label>
-					<form action="" method="get" class="form-example">
+					
 						<div class="form-example mt-3">
 							<label for="name">Rue : </label> <input type="text"
-								name="article" id="article" required>
+								name="rue" id="rue" required>
 						</div>
 						<div class="form-example mt-3">
 							<label for=codepostal>Code postal</label> <input id=codepostal
 								name=codepostal type=text required>
 						</div>
 						<div class="form-example mt-3">
-							<label for="email">Ville : </label> <input type="email"
-								name="description" id="description" required>
+							<label for="ville">Ville : </label> <input type="text"
+								name="ville" id="ville" required>
 						</div>
+						<a href="./accueil"><button type="submit" class="btn btn-primary mt-3"
+									name="Enregistrer">Enregistrer</button></a> 
 					</form>
 					<br>
 					<div class="container col-xs-12 col-sm-12 col-md-6 col-lg-6">
 						<div class="row">
 
-							<a href="#"><button type="submit" class="btn btn-primary mt-3"
-									name="sEnregistrer">Enregistrer</button></a> <a
-								href="PagePrincipale"><button type="submit"
-									class="btn btn-primary mt-3" name="sAnnuler">Annuler</button></a>
+							
+							<a href="PagePrincipale"><button type="submit"
+									class="btn btn-primary mt-3" name="Annuler">Annuler</button></a>
 						</div>
 					</div>
 				</div>
