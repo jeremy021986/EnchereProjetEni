@@ -30,9 +30,7 @@
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="accueil">Accueil</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="PublicationVente">Enchères</a></li>
+					
 					<li class="nav-item"><a class="nav-link" href="PageConnexion">S'inscrire
 							/ Se connecter</a></li>
 				</ul>

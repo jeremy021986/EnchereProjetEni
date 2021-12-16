@@ -34,8 +34,7 @@
 						href="PublicationVente">Vendre un article</a></li>
 					<li class="nav-item"><a class="nav-link" href="Profil">Mon
 							Profil :<c:out value="${sessionScope.pseudo}"/></a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="PublicationVente">Enchères</a></li>
+					
 					<li class="nav-item"><a class="nav-link" href="Deconnection">Déconnexion</a>
 					</li>
 				</ul>
@@ -101,7 +100,7 @@
 						<input type="text" class="search"
 							placeholder="Le nom de l'article contient"> <br>
 						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-							<button type="submit" style="background-color: #8E806A;" >Rechercher</button>
+							<button type="submit" class="btn btn-dark mt-3" style="background-color: #8E806A;" >Rechercher</button>
 						</div>
 					</div>
 				</div>

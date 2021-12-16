@@ -117,15 +117,15 @@
 								name="rue" id="rue" value="${requestScope.rue}" required>
 						</div>
 						<div class="form-example mt-3">
-							<label for=codepostal>Code postal</label> <input id=codepostal
-								name=codepostal type=text value="${requestScope.codepostal}" required>
+							<label for=codepostal>Code postal</label> <input id=cp
+								name=cp type=text value="${requestScope.cp}" required>
 						</div>
 						<div class="form-example mt-3">
 							<label for="ville">Ville : </label> <input type="text"
 								name="ville" id="ville" value="${requestScope.ville}" required>
 						</div>
-						<a href="./accueil"><button type="submit" class="btn btn-dark mt-3" style="background-color: #8E806A;"
-									name="Enregistrer">Enregistrer</button></a> 
+						<button type="submit" class="btn btn-dark mt-3" style="background-color: #8E806A;"
+									name="Enregistrer">Enregistrer</button>
 					</form>
 					<br>
 					<div class="container col-xs-12 col-sm-12 col-md-6 col-lg-6">

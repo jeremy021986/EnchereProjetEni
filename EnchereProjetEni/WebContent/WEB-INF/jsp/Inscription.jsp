@@ -125,6 +125,7 @@
 	    <label for="inputPassword">Mot de passe:</label>
 	    <input type="password" class="form-control" id="creaMdp" name="creaMdp" placeholder="8 caractères minimum" minlength="8" required>
 	  </div>
+	  
 	  <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
 	    <label for="inputPassword2">Confirmation:</label>
 	    <input type="text" class="form-control" id="confirmMdp" name="confirmMdp" placeholder="8 caractères minimum" minlength="8" required>
@@ -132,7 +133,7 @@
 	  </div>
   </div>
   
-  <br>
+  
 
   <div class="container-fluid">
   <div class="row">
@@ -142,11 +143,11 @@
 	  
 	  </div>
   </div>
- 
+ <br>
  </form>
- <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+ 
 	    <a href="./accueil"><button type="submit" class="btn btn-dark" style="background-color: #8E806A;">Annuler</button></a>
-	  </div>
+	  
  </div>
  </div>
  </div>

@@ -95,10 +95,11 @@ public class PublicationVenteServlet extends HttpServlet {
 			// RetraitManager.getInstance().ajouterLieuRetrait(retrait);
 			ArticleVenduManager.getInstance().insertArticle(articleAjoute);
 			// request.setAttribute("ArticleAffiche", articleAjoute);
-
+			
 		} catch (Exception e) {
 		e.printStackTrace();
 
 		}
+		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/Principale.jsp").forward(request, response);
 	}
 }
