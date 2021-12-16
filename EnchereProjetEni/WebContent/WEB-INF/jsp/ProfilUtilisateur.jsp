@@ -22,10 +22,9 @@
 </head>
 <body>
 <body style="background-color: #F2EEE8;">
-
-	<nav class="navbar navbar-expand-lg navbar-light"style="background-color: #E4CDA7;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
 		<div class="container">
-			<a class="navbar-brand" href="#">Les objets sont nos amis</a>
+			<a class="navbar-brand" href="PagePrincipale">Les objets sont nos amis</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
 				aria-controls="navbarNav" aria-expanded="false"
@@ -36,13 +35,15 @@
 				<!-- ms-auto = margin-left:auto -->
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="accueil">Accueil</a></li>
-					<li class="nav-item"><a class="nav-link" href="Profil">Profil</a>
-					</li>
+						aria-current="page" href="PagePrincipale">Accueil</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="PublicationVente">Enchères</a></li>
-					<li class="nav-item"><a class="nav-link" href="PageConnexion">S'inscrire
-							/ Se connecter</a></li>
+						href="PublicationVente">Vendre un article</a></li>
+					<li class="nav-item"><a class="nav-link" href="Profil">Mon
+							Profil : <c:out value="${sessionScope.pseudo}"/></a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="EnchereEnCours">Enchères</a></li>
+					<li class="nav-item"><a class="nav-link" href="Deconnection">Déconnexion</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -62,7 +63,7 @@
 
 		<h5>Email :</h5>
 		<c:out value="${requestScope.email}" />
-		br>
+		
 		<h5>Téléphone :</h5>
 		<c:out value="${requestScope.tel}" />
 

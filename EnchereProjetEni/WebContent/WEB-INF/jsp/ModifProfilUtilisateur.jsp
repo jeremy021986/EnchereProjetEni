@@ -15,39 +15,32 @@
 </head>
 <body>
 <body style="background-color:#F2EEE8;">
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
-      <div class="container">
-        <a class="navbar-brand" href="#">Les objets sont nos amis</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <!-- ms-auto = margin-left:auto -->
-          <ul class="navbar-nav ms-auto">
-           <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="accueil">Accueil</a>
-           </li>
-           <li class="nav-item">
-              <a class="nav-link" href="#">Profil</a>
-           </li>
-           <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-           </li>
-           <li class="nav-item">
-              <a class="nav-link" href="PageConnexion">s'inscrire / se connecter</a>
-           </li>
-         </ul>
-      </div>
-   </div>
-</nav>
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
+		<div class="container">
+			<a class="navbar-brand" href="PagePrincipale">Les objets sont nos amis</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<!-- ms-auto = margin-left:auto -->
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="PagePrincipale">Accueil</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="PublicationVente">Vendre un article</a></li>
+					<li class="nav-item"><a class="nav-link" href="Profil">Mon
+							Profil : <c:out value="${sessionScope.pseudo}"/></a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="EnchereEnCours">Enchères</a></li>
+					<li class="nav-item"><a class="nav-link" href="Deconnection">Déconnexion</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 <div class="container my-6 col-6 p-5">
 	<h1> ENI-Encheres</h1>
 <p>Mon Profil</p>
