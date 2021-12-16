@@ -26,6 +26,10 @@ public class Retrait {
 			this.ville = ville;
 		}
 
+		public Retrait() {
+			// TODO Auto-generated constructor stub
+		}
+
 		public int getIdRetrait() {
 			return idRetrait;
 		}
