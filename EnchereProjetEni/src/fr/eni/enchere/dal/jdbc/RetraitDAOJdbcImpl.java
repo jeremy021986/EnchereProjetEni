@@ -1,11 +1,11 @@
 package fr.eni.enchere.dal.jdbc;
 import fr.eni.enchere.bo.Retrait;
+import fr.eni.enchere.dal.RetraitDAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import fr.eni.enchere.bll.BLLException;
-import fr.eni.enchere.bll.RetraitDAO;
 
 public class RetraitDAOJdbcImpl implements RetraitDAO {
 	
