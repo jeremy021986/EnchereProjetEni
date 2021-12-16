@@ -11,7 +11,8 @@
     <title>Inscription</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<body style="background-color:#F2EEE8;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
       <div class="container">
         <a class="navbar-brand" href="#">Les objets sont nos amis</a>
         <button
@@ -136,7 +137,7 @@
   <div class="container-fluid">
   <div class="row">
 	  <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-	   	<button type="submit" class="btn btn-success">Créer</button>
+	   	<button type="submit" class="btn btn-dark" style="background-color: #8E806A;">Créer</button>
 	  </div>
 	  
 	  </div>
@@ -144,7 +145,7 @@
  
  </form>
  <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-	    <a href="./accueil"><button type="submit" class="btn btn-success">Annuler</button></a>
+	    <a href="./accueil"><button type="submit" class="btn btn-dark" style="background-color: #8E806A;">Annuler</button></a>
 	  </div>
  </div>
  </div>
@@ -153,7 +154,7 @@
  <br>
 <br>
 </body>
-<footer class="container-fluid bg-success p-2 text-white">
+<footer class="container-fluid p-2 text-white" style="background-color: #E4CDA7;">
       <div class="container text-center">&copy; 2021–2021 copyright</div>
  </footer>
  </html>

@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<body style="background-color:#F2EEE8;">
 <h1> ENI-Encheres</h1>
  <p>Detail vente</p>
 
@@ -36,7 +37,7 @@
  <br>
 
  
-<button type="submit">Retrait effectué</button><!-- faire la redirection -->
+<button type="submit" style="background-color: #8E806A;" >Retrait effectué</button><!-- faire la redirection -->
 
 
 </body>

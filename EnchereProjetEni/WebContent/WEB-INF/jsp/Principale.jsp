@@ -15,8 +15,8 @@
 <title>Accueil Encheres</title>
 </head>
 <body>
-
-	<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<body style="background-color:#F2EEE8;">
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
 		<div class="container">
 			<a class="navbar-brand" href="#">Les objets sont nos amis</a>
 			<button class="navbar-toggler" type="button"
@@ -101,7 +101,7 @@
 						<input type="text" class="search"
 							placeholder="Le nom de l'article contient"> <br>
 						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-							<button type="submit">Rechercher</button>
+							<button type="submit" style="background-color: #8E806A;" >Rechercher</button>
 						</div>
 					</div>
 				</div>
@@ -164,7 +164,7 @@
 
 
 </body>
-<footer class="container-fluid bg-success p-2 text-white">
+<footer class="container-fluid p-2 text-white" style="background-color: #E4CDA7;">
 	<div class="container text-center">&copy; 2021 copyright</div>
 </footer>
 </html>

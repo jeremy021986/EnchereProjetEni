@@ -15,7 +15,8 @@
 <title>Accueil Enchère</title>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<body style="background-color:#F2EEE8;">
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
 		<div class="container">
 			<a class="navbar-brand" href="#">Les objets sont nos amis</a>
 			<button class="navbar-toggler" type="button"
@@ -30,8 +31,6 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="accueil">Accueil</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Contact</a>
-					</li>
 					<li class="nav-item"><a class="nav-link"
 						href="PublicationVente">Enchères</a></li>
 					<li class="nav-item"><a class="nav-link" href="PageConnexion">S'inscrire
@@ -41,9 +40,14 @@
 		</div>
 	</nav>
 
+<br>
+<br>
+<br>
+<br>
+<br>
 	<div class="container-fluid">
 		<div class="container">
-			<h1>ENI-Encheres</h1>
+			
 			<h2 class="text-center">Liste des enchères</h2>
 
 			<div class="row justify-content-around">
@@ -68,7 +72,7 @@
 						<form action="./PageInscription" method="post" class="miseaprix">
 							<label for="mPrix">Filtre:</label> <input class="input"
 								type="text" name="nomArticle" 
-								required> <br> <label class="mt-3" for="email">Categorie
+								required> <br> <label class="mt-5" for="email">Categorie
 								: </label> <select name="pets" id="pet-select">
 								<option value="">--Toutes--</option>
 								<option value="informatique">Informatique</option>
@@ -79,7 +83,7 @@
 							</select> <br>
 						</form>
 						<a href="#"><button type="submit"
-								class="btn btn-success mt-3 col-xs-12 col-sm-12 col-md-4 col-lg-4"
+								class="btn btn-dark mt-3 col-xs-12 col-sm-12 col-md-4 col-lg-4" style="background-color: #8E806A;"
 								name="sRechercher">Rechercher</button></a>
 					</div>
 				</div>
@@ -94,8 +98,17 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 </body>
-<footer class="container-fluid bg-success p-2 text-white">
+<footer class="container-fluid p-2 text-white" style="background-color: #E4CDA7;">
 	<div class="container text-center">&copy; 2021–2021 copyright</div>
 </footer>
+</body>
 </html>

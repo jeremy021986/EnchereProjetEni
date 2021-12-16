@@ -11,7 +11,8 @@
 <title>Article Vendu</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-success">
+<body style="background-color:#F2EEE8;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
         <div class="container">
             <a class="navbar-brand" href="#">Les objets sont nos amis</a>
             <button class="navbar-toggler" type="button"
@@ -37,7 +38,7 @@
     </nav>
 
 </body>
-<footer class="container-fluid bg-succes p-2 text-white">
+<footer class="container-fluid p-2 text-white" style="background-color: #E4CDA7;">
       <div class="container text-center">&copy; 2021–2021 copyright</div>
  </footer>
  </html>

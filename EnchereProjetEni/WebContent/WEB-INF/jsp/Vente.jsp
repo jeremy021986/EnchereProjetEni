@@ -22,7 +22,8 @@
 <title>Nouvelle vente</title>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<body style="background-color:#F2EEE8;">
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
 		<div class="container">
 			<a class="navbar-brand" href="#">Les objets sont nos amis</a>
 			<button class="navbar-toggler" type="button"
@@ -65,7 +66,7 @@
 							<h5 class="card-title">Article n°3</h5>
 							<p class="card-text">Some quick example text to build on the
 								card title and make up the bulk of the card's content.</p>
-							<a href="#" class="text-center btn btn-primary">Uploader</a>
+							<a href="#" class="text-center btn btn-dark" style="background-color: #8E806A;" >Uploader</a>
 						</div>
 					</div>
 				</div>
@@ -123,7 +124,7 @@
 							<label for="ville">Ville : </label> <input type="text"
 								name="ville" id="ville" value="${requestScope.ville}" required>
 						</div>
-						<a href="./accueil"><button type="submit" class="btn btn-primary mt-3"
+						<a href="./accueil"><button type="submit" class="btn btn-dark mt-3" style="background-color: #8E806A;"
 									name="Enregistrer">Enregistrer</button></a> 
 					</form>
 					<br>
@@ -132,7 +133,7 @@
 
 							
 							<a href="PagePrincipale"><button type="submit"
-									class="btn btn-primary mt-3" name="Annuler">Annuler</button></a>
+									class="btn btn-dark mt-3" style="background-color: #8E806A;" name="Annuler">Annuler</button></a>
 						</div>
 					</div>
 				</div>
@@ -146,7 +147,9 @@
 </body>
 <br>
 <br>
-<footer class="container-fluid bg-success p-2 text-white">
+<br>
+<br>
+<footer class="container-fluid p-2 text-white" style="background-color: #E4CDA7;">
 	<div class="container text-center">&copy; 2021 copyright</div>
 </footer>
 </html>

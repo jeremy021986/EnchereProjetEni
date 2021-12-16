@@ -15,7 +15,8 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-success">
+<body style="background-color:#F2EEE8;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
       <div class="container">
         <a class="navbar-brand" href="#">Les objets sont nos amis</a>
         <button
@@ -44,9 +45,7 @@
            <li class="nav-item">
               <a class="nav-link" href="PageConnexion">S'inscrire / Se connecter</a>
            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Nous Contacter</a>
-           </li>
+           
          </ul>
       </div>
    </div>
@@ -61,8 +60,7 @@
                 incorrects!</p>
         </c:if>
 		<!-- Mettre le logo enchere -->
-			<img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt=""
-				width="72" height="57">
+			
 			<h1 class="h3 mb-3 fw-normal">Se connecter</h1>
 
 			 <div class="form-group">
@@ -86,19 +84,19 @@
 					Se souvenir de moi
 				</label>
 			</div>
-			<button class="w-100 btn btn-lg btn-success" type="submit">Connexion</button> 
+			<button class="w-100 btn btn-lg btn-dark" style="background-color: #8E806A;" type="submit">Connexion</button> 
 			<br>
 			<br>
 			
 		</form>  
-		<a href="./PageInscription"><button  class="w-100 btn btn-lg btn-success"  type="submit">Créer un compte</button></a>
+		<a href="./PageInscription"><button  class="w-100 btn btn-lg btn-dark" style="background-color: #8E806A;" type="submit">Créer un compte</button></a>
 		
 	</main>
 	
 	
 	
 
-	<a href="https://example.com">Mot de passe oublié</a>
+	<a href="https://example.com" style="color:#000000;">Mot de passe oublié</a>
 </div>
 	<br>
 	<br>
@@ -108,8 +106,14 @@
 	<br>
 	<br>
 	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	
 </body>
-<footer class="container-fluid bg-success p-2 text-white">
+<footer class="container-fluid p-2 text-white" style="background-color: #E4CDA7;">
       <div class="container text-center">&copy; 2021–2021 copyright</div>
  </footer>
  </html>

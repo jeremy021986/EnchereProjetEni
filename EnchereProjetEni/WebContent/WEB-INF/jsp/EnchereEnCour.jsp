@@ -15,7 +15,8 @@
 <title>Détail Vente</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<body style="background-color:#F2EEE8;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
 		<div class="container">
 			<a class="navbar-brand" href="#">Les objets sont nos amis</a>
 			<button class="navbar-toggler" type="button"
@@ -95,7 +96,7 @@
 							type="number" name="minPrix" id="maxPrix" step="5" max="10000"
 							required>
 					</form>
-							<a href="#"><button type="submit" class="btn btn-success mt-3 col-xs-12 col-sm-12 col-md-4 col-lg-4"
+							<a href="#"><button type="submit" class="btn btn- mt-3 col-xs-12 col-sm-12 col-md-4 col-lg-4" style="background-color: #8E806A;"
 									name="sEncherir">Enchérir</button></a> 
 					</div>
 				</div>
@@ -109,7 +110,7 @@
 </body>
 <br>
 <br>
-<footer class="container-fluid bg-success p-2 text-white">
+<footer class="container-fluid p-2 text-white" style="background-color: #E4CDA7;">
 	<div class="container text-center">&copy; 2021 copyright</div>
 </footer>
 </html>
