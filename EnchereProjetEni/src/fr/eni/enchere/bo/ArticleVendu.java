@@ -1,6 +1,7 @@
 package fr.eni.enchere.bo;
 
 
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class ArticleVendu {
 	private Retrait LieuRetrait;
 	private Categorie categorie;	
 	private int idCategorie;
+	private Utilisateur vendeur;
 
 	private List<Utilisateur> listeUtilisateur;
 	private List<Retrait> listeRetrait;
@@ -53,6 +55,8 @@ public class ArticleVendu {
 		this.prixInitial = prixInitial;
 		this.prixVente = prixVente;
 	}
+
+
 
 	public List<Utilisateur> getListeUtilisateur() {
 		return listeUtilisateur;
@@ -163,8 +167,18 @@ public class ArticleVendu {
 		return categorie;
 	}
 
+	
+
 	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
+	}
+
+	public Utilisateur getVendeur() {
+		return vendeur;
+	}
+
+	public void setVendeur(Utilisateur vendeur) {
+		this.vendeur = vendeur;
 	}
 
 	@Override
