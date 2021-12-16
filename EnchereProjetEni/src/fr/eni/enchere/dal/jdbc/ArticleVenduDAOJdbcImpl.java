@@ -337,17 +337,19 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 
 	public ArticleVendu map(ResultSet rs) throws SQLException {
 		ArticleVendu article = null;
-		rs.getInt("idArticle");
-		rs.getString("nomArticle");
-		rs.getString("description");
-		rs.getDate("dateDebutEncheres");
-		rs.getDate("dateFinEncheres");
-		rs.getInt("prixInitial");
-		rs.getInt("prixVente");
-		rs.getInt("idUtilisateur");
-		rs.getInt("idCategorie");
+		int idArticle = rs.getInt("no_article");
+		String nomArticle = rs.getString("nom_article");
+		String descrption = rs.getString("description");
+		LocalDateTime debutEnchere = rs.getTimestamp("date_debut_encheres").toLocalDateTime();
+		LocalDateTime finEnchere = rs.getTimestamp("date_fin_encheres").toLocalDateTime();
+		int prixInitial = rs.getInt("prix_initial");
+		int prixVente = rs.getInt("prix_vente");
+		int idUtlisateur = rs.getInt("no_utilisateur");
+		int idCategorie = rs.getInt("no_categorie");
 
+		article = new ArticleVendu(idArticle, nomArticle, descrption, debutEnchere, finEnchere, prixInitial, prixVente, idUtlisateur, idCategorie);
 		// TODO verif conversion date
 		return article;
 	}
 }
+	

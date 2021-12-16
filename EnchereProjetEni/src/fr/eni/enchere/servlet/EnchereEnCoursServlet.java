@@ -46,9 +46,9 @@ public class EnchereEnCoursServlet extends HttpServlet {
 			System.out.println(nomArticle);
 			request.setAttribute("article", nomArticle);
 	
-//			String description = articleVendu.getDescription();
-//			System.out.println("description ca passe " + description);
-//			request.setAttribute("description", description);
+			String description = articleVendu.getDescription();
+			System.out.println("description ca passe " + description);
+			request.setAttribute("description", description);
 			
 			//On verra si on en a besoin 
 //			int categorie = articleVendu.getIdCategorie();
