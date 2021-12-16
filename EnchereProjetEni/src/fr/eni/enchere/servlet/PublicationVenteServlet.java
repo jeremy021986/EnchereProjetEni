@@ -1,7 +1,10 @@
 package fr.eni.enchere.servlet;
 
 import java.io.IOException;
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,14 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fr.eni.enchere.bll.ArticleVenduManager;
-import fr.eni.enchere.bll.CategorieManager;
-import fr.eni.enchere.bll.RetraitManager;
+import fr.eni.enchere.bll.BLLException;
+
 import fr.eni.enchere.bll.UtilisateurManager;
 import fr.eni.enchere.bo.ArticleVendu;
-import fr.eni.enchere.bo.Categorie;
-import fr.eni.enchere.bo.Retrait;
-import fr.eni.enchere.bo.Utilisateur;
 
+import fr.eni.enchere.bo.Utilisateur;
 
 /**
  * Servlet implementation class PublicationVenteServlet
@@ -32,110 +33,72 @@ public class PublicationVenteServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
+		HttpSession session = request.getSession();
+		String pseudo = (String) session.getAttribute("pseudo");
+		try {
+			Utilisateur utilisateur = UtilisateurManager.getInstance().affichageProfil(pseudo);
+			String rue = utilisateur.getRue();
+			request.setAttribute("rue", rue);
+			String cp = utilisateur.getCodePostal();
+			request.setAttribute("cp", cp);
+			String ville = utilisateur.getVille();
+			request.setAttribute("ville", ville);
+		} catch (BLLException e) {
+			e.printStackTrace();
+		}
 
 		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/Vente.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		System.err.println(request.getParameter("prixInitial"));
 
+		System.err.println(request.getParameter("prixInitial"));
+		
 		HttpSession session = request.getSession();
-		Retrait retrait = new Retrait();
+		String pseudo = (String) session.getAttribute("pseudo");
 		ArticleVendu articleAjoute = new ArticleVendu();
+		// Utilisateur utilisateur = (Utilisateur) session.getAttribute("pseudo");
 
 		try {
+			// int categorieId =
+			// Integer.parseInt(CategorieManager.getInstance().selectionnerCategorieById(categorieId));
 			String nom = request.getParameter("article");
 			String description = request.getParameter("description");
-			LocalDate dateDebutEncheres = LocalDate.parse(request.getParameter("debutEnchere"));
-			LocalDate dateFinEncheres = LocalDate.parse(request.getParameter("finEnchere"));
+			// LocalDate dateDebutEncheres =
+			// LocalDate.parse(request.getParameter("debutEnchere"));
+			// LocalDate dateFinEncheres =
+			// LocalDate.parse(request.getParameter("finEnchere"));
 			int prixInitial = Integer.parseInt(request.getParameter("prixInitial"));
 			int categorie = Integer.parseInt(request.getParameter("categorie"));
-			String rue = request.getParameter("rue");
-			String codePostal = request.getParameter("codepostal");
-			String ville = request.getParameter("ville");
 
-			Categorie categorieId = CategorieManager.getInstance().selectionnerCategorieById(categorie);
-		//	Utilisateur utilisateur = (Utilisateur) session.getAttribute("pseudo");
+			String debutEnchere = request.getParameter("debutEnchere");
+			String finEnchere = request.getParameter("finEnchere");
 
-			
-			
-			retrait.setRue(rue);
-			retrait.setCodePostal(codePostal);
-			retrait.setVille(ville);
+			articleAjoute.setNomArticle(request.getParameter("article"));
 
-			//articleAjoute.setNomArticle(request.getParameter("article"));
-			
 			articleAjoute.setNomArticle(nom);
 			articleAjoute.setDescription(description);
-			articleAjoute.setDateDebutEnchere(dateDebutEncheres);
-			articleAjoute.setDateFinEnchere(dateFinEncheres);
-			articleAjoute.setPrixInitial(prixInitial);
-			articleAjoute.setCategorie(categorieId);
-			articleAjoute.setLieuRetrait(retrait);
-	//		articleAjoute.setVendeur(utilisateur);
 
-			
-			System.out.println(retrait);
-			String pseudo = (String) session.getAttribute("pseudo");
-			Utilisateur utilisateur = UtilisateurManager.getInstance().affichageProfil(pseudo);
-			String rueinitiale = utilisateur.getRue();
-			request.setAttribute("rue",rueinitiale);
-			String codePostalinitial = utilisateur.getCodePostal();
-			request.setAttribute("codepostal",codePostalinitial);
-			String villeinitiale = utilisateur.getVille();
-			request.setAttribute("ville",villeinitiale);
-			
-			RetraitManager.getInstance().ajouterLieuRetrait(retrait);
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+			// convert String to LocalDate
+			LocalDateTime startEnchere = LocalDateTime.parse(debutEnchere, formatter);
+			LocalDateTime endEnchere = LocalDateTime.parse(finEnchere, formatter);
+
+			articleAjoute.setDateDebutEnchere(startEnchere);
+			articleAjoute.setDateFinEnchere(endEnchere);
+			articleAjoute.setPrixInitial(prixInitial);
+			articleAjoute.setIdCategorie(categorie);
+			// articleAjoute.setLieuRetrait(retrait);
+			// articleAjoute.setVendeur(utilisateur);
+			// RetraitManager.getInstance().ajouterLieuRetrait(retrait);
 			ArticleVenduManager.getInstance().insertArticle(articleAjoute);
-			request.setAttribute("ArticleAffiche", articleAjoute);
-			
+			// request.setAttribute("ArticleAffiche", articleAjoute);
+
 		} catch (Exception e) {
-			
-			
-			e.printStackTrace();
-			this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/Principale.jsp").forward(request, response);
+		e.printStackTrace();
+
 		}
-		
 	}
 }
-
-//				ArticleVenduManager.getInstance().insertArticle(articleAjoute);
-//				
-//				 request.setAttribute("Article", article);
-//		            this.getServletContext().getRequestDispatcher("/accueil").forward(request, response);
-//			} catch (Exception e) {
-//				
-//				e.printStackTrace();
-//			}
-//			
-//			response.sendRedirect("./PagePrincipale");
-
-// }
-// }
-//	}
-
-// articleAjouter.setNomArticle(request.getParameter("article"));
-// articleAjouter.setDescription(request.getParameter("description"));
-
-// articleAjouter.setPrixInitial(Integer.parseInt(request.getParameter("miseAPrix")));
-// articleAjouter.setDateDebutEnchere(LocalDateTime.parse(request.getParameter("debutEnchere")));
-// articleAjouter.setDateFinEnchere(LocalDateTime.parse(request.getParameter("finEnchere")));
-// TODO a terminer vérifier l'objet RETRAIT
-// articleAjouter.setLieuRetrait(request.getParameter("rue,codepostal,ville"));
-// chaque categorie indépendante ou categorie generale ??
-// String categorie = request.getParameter("categorie");
-// String informatique = request.getParameter("informatique");
-// String ameublement = request.getParameter("ameublement");
-// String vetement = request.getParameter("vetement");
-// String sportETloisirs = request.getParameter("sportETloisirs");
-// String description = request.getParameter("description");
-// String miseAprix = request.getParameter("miseAprix");
-// String dateDebutEnchere = request.getParameter("dateDebutEnchere");
-// String dateFinEnchere = request.getParameter("dateFinEnchere");
-// String rue = request.getParameter("rue");
-// String codepostal = request.getParameter("codepostal");
-// String ville = request.getParameter("ville");
-// utilisation singleton pour recuperer les methodes(insert)
