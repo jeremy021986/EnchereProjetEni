@@ -1,5 +1,12 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.List" %>
+<%@ page import="fr.eni.enchere.bo.Utilisateur" %>
+<%@ page import="java.time.format.FormatStyle" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="fr">
@@ -71,17 +78,17 @@
 							<label for="name">Article :</label> <input type="text"
 								name="article" id="article" required>
 						</div>
-						<br> <label class="mb-3" for="email">Categorie : </label> <select
-							name="pets" id="pet-select">
+						<br> <label class="mb-3" for="text">Categorie : </label> <select
+							name="categorie" id="categorie">
 							<option value="">--Toutes--</option>
-							<option value="informatique">Informatique</option>
-							<option value="ameublement">Ameublement</option>
-							<option value="vetement">Vetement</option>
-							<option value="sport&loisirs">Sport & Loisirs</option>
+							<option value="1" id =  "1"  name=  "1" >Informatique</option>
+							<option value="2" id =   "2" name= "2" >Ameublement</option>
+							<option value="3" id =  "3"  name= "3">Vetement</option>
+							<option value="4" id =  "4"  name= "4" >Sport & Loisirs</option>
 
 						</select> 
 						<br>
-						 <label for="email">Description :</label> <input
+						 <label for="text">Description :</label> <input
 							type="text" name="description" id="description" required>
 					
 					  
@@ -106,15 +113,15 @@
 					
 						<div class="form-example mt-3">
 							<label for="name">Rue : </label> <input type="text"
-								name="rue" id="rue" required>
+								name="rue" id="rue" value="${requestScope.rue}" required>
 						</div>
 						<div class="form-example mt-3">
 							<label for=codepostal>Code postal</label> <input id=codepostal
-								name=codepostal type=text required>
+								name=codepostal type=text value="${requestScope.codepostal}" required>
 						</div>
 						<div class="form-example mt-3">
 							<label for="ville">Ville : </label> <input type="text"
-								name="ville" id="ville" required>
+								name="ville" id="ville" value="${requestScope.ville}" required>
 						</div>
 						<a href="./accueil"><button type="submit" class="btn btn-primary mt-3"
 									name="Enregistrer">Enregistrer</button></a> 
