@@ -4,25 +4,46 @@ import java.time.LocalDateTime;
 
 public class Enchere {
 
+		private int idEnchere;
 	
-		private ArticleVendu article;
+		private int idArticle;
 		
-		private Utilisateur utilisateur;
+		private int idUtilisateur;
 		
 		private LocalDateTime dateEnchere;
 		
 		private int montantEnchere;
 		
-		public ArticleVendu getArticle() {
-			return article;
+		
+		public Enchere() {}
+		
+		public Enchere(int montantEnchere) {
+			this.montantEnchere = montantEnchere;
+		}
+	
+		public Enchere(LocalDateTime dateEnchere, int montantEnchere, int idArticle, int idUtilisateur) {
+			this.dateEnchere = dateEnchere;
+			this.montantEnchere = montantEnchere;
+			this.idArticle = idArticle;
+			this.idUtilisateur = idUtilisateur;
+		}
+		
+		public Enchere(int idEnchere, LocalDateTime dateEnchere, int montantEnchere, int idArticle, int idUtilisateur) {
+			this.idEnchere = idEnchere;
+			this.dateEnchere = dateEnchere;
+			this.montantEnchere = montantEnchere;
+			this.idArticle = idArticle;
+			this.idUtilisateur = idUtilisateur;
 		}
 
-		
-		public void setArticle(ArticleVendu article) {
-			this.article = article;
+		public int getIdEnchere() {
+			return idEnchere;
 		}
 
-		
+		public void setIdEnchere(int idEnchere) {
+			this.idEnchere = idEnchere;
+		}
+
 		public LocalDateTime getDateEnchere() {
 			return dateEnchere;
 		}
@@ -40,29 +61,33 @@ public class Enchere {
 		public void setMontantEnchere(int montantEnchere) {
 			this.montantEnchere = montantEnchere;
 		}
-
+	
 		
-		
-		
-
-		public Utilisateur getUtilisateur() {
-			return utilisateur;
+		public int getIdArticle() {
+			return idArticle;
 		}
 
-		public void setUtilisateur(Utilisateur utilisateur) {
-			this.utilisateur = utilisateur;
+		
+		public void setIdArticle(int idArticle) {
+			this.idArticle = idArticle;
+		}
+
+		
+		public int getIdUtilisateur() {
+			return idUtilisateur;
+		}
+
+		
+		public void setIdUtilisateur(int idUtilisateur) {
+			this.idUtilisateur = idUtilisateur;
 		}
 
 
 		@Override
 		public String toString() {
-			return "Enchere [article=" + article + ", utilisateur=" + utilisateur + ", dateEnchere=" + dateEnchere
+			return "Enchere [enchere= " + idEnchere + " article=" + idArticle + ", utilisateur=" + idUtilisateur + ", dateEnchere=" + dateEnchere
 					+ ", montantEnchere=" + montantEnchere + "]";
 		}
 
-	
-	
-
-		
 	}
 	

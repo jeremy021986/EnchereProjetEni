@@ -8,6 +8,7 @@ import java.util.List;
 import fr.eni.enchere.bo.ArticleVendu;
 import fr.eni.enchere.bo.Categorie;
 import fr.eni.enchere.bo.Enchere;
+import fr.eni.enchere.bo.Retrait;
 import fr.eni.enchere.bo.Utilisateur;
 import fr.eni.enchere.dal.ArticleVenduDAO;
 import fr.eni.enchere.dal.DALException;
@@ -50,11 +51,11 @@ public class ArticleVenduManager {
 		}
 	}
 	
-	public void updateArticle(int idArticle, String nomArticle, String description, LocalDateTime dateDebutEnchere,
-			LocalDateTime dateFinEnchere, int prixInitial, int prixVente, boolean etatVente, Categorie categorie,
-			Utilisateur utilisateur, Enchere enchere) throws DALException, SQLException {
+	public void updateArticle(int idArticle, String nomArticle, String categorie, String description, int prixVente, LocalDateTime dateDebutEnchere,
+			LocalDateTime dateFinEnchere, Retrait lieuRetrait) throws DALException, SQLException {
 		
-	ArticleVendu articleVendu = new ArticleVendu(idArticle, nomArticle, description, dateDebutEnchere, dateFinEnchere, prixInitial, prixVente, etatVente,categorie,utilisateur,enchere);
+	ArticleVendu articleVendu = new ArticleVendu(idArticle, nomArticle, categorie, description, prixVente, dateDebutEnchere,
+			dateFinEnchere, lieuRetrait);
 	dao.update(articleVendu);
 	
 	try {

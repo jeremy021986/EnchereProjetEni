@@ -19,6 +19,7 @@ public class ArticleVendu {
 	private Categorie categorie;	
 	private int idCategorie;
 	private Utilisateur vendeur;
+	private int idUtilisateur;
 
 	private List<Utilisateur> listeUtilisateur;
 	private List<Retrait> listeRetrait;
@@ -27,6 +28,17 @@ public class ArticleVendu {
 
 	public ArticleVendu() {
 		// TODO Auto-generated constructor stub
+	}
+	
+	public ArticleVendu(int idArticle, String nomArticle, String categorie, String description, int prixVente, LocalDateTime dateDebutEnchere,
+			LocalDateTime dateFinEnchere, Retrait LieuRetrait) {
+		super();
+		this.idArticle = idArticle;
+		this.nomArticle = nomArticle;
+		this.description = description;
+		this.dateDebutEnchere = dateDebutEnchere;
+		this.dateFinEnchere = dateFinEnchere;
+		this.LieuRetrait = LieuRetrait;
 	}
 	
 	public ArticleVendu(int idArticle, String nomArticle, String description, LocalDateTime dateDebutEnchere,
@@ -54,6 +66,7 @@ public class ArticleVendu {
 		this.dateFinEnchere = dateFinEnchere;
 		this.prixInitial = prixInitial;
 		this.prixVente = prixVente;
+		this.idUtilisateur = idUtilisateur;
 	}
 
 
@@ -171,6 +184,17 @@ public class ArticleVendu {
 
 	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
+	}
+
+	/**
+	 * @return the idUtilisateur
+	 */
+	public int getIdUtilisateur() {
+		return idUtilisateur;
+	}
+
+	public void setIdUtilisateur(int idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
 	}
 
 	public Utilisateur getVendeur() {
