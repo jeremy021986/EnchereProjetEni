@@ -48,7 +48,7 @@
 <div class="container-fluid">
 <div class="container">
 <h1> ENI-Encheres</h1>
-	<p>Mon Profil</p>
+	<p>Inscription</p>
 <div class="row">
 	
 	

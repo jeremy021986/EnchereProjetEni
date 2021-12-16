@@ -56,7 +56,8 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 			if (rs.next()) {
 				article = map(rs);
 			}
-
+			cnx.close();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new DALException(e.getMessage());
@@ -84,7 +85,8 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 			statement.setInt(9, articleVendu.getLieuRetrait().getIdRetrait());
 
 			statement.executeUpdate();
-
+			cnx.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 
@@ -115,6 +117,8 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 				nouvelArticle.setIdArticle(idArticleInsere);
 			}
 
+			cnx.close();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new DALException(e.getMessage());
@@ -132,6 +136,8 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 			pStmt.executeUpdate();
 
 			// return n == 1;//si 1 ligne supprim�e --> true, sinon false
+			cnx.close();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new DALException(e.getMessage());

@@ -14,8 +14,11 @@ import javax.servlet.http.HttpSession;
 
 import fr.eni.enchere.bll.ArticleVenduManager;
 import fr.eni.enchere.bll.BLLException;
+import fr.eni.enchere.bll.EnchereManager;
+import fr.eni.enchere.bll.UtilisateurManager;
 import fr.eni.enchere.bo.ArticleVendu;
-
+import fr.eni.enchere.bo.Enchere;
+import fr.eni.enchere.bo.Utilisateur;
 
 /**
  * Servlet implementation class EnchereEnCoursServlet
@@ -31,7 +34,7 @@ public class EnchereEnCoursServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		
 		HttpSession session = request.getSession();
 		
@@ -43,9 +46,9 @@ public class EnchereEnCoursServlet extends HttpServlet {
 			System.out.println(nomArticle);
 			request.setAttribute("article", nomArticle);
 	
-			String description = articleVendu.getDescription();
-			System.out.println("description ca passe " + description);
-			request.setAttribute("description", description);
+//			String description = articleVendu.getDescription();
+//			System.out.println("description ca passe " + description);
+//			request.setAttribute("description", description);
 			
 			//On verra si on en a besoin 
 //			int categorie = articleVendu.getIdCategorie();
@@ -66,15 +69,15 @@ public class EnchereEnCoursServlet extends HttpServlet {
 			String formatDateTime = dateFinEnchere.format(formatter);
 			request.setAttribute("dateFinEnchere", formatDateTime);
 			
-			//Enchere enchere = null;
+//			//Enchere enchere = null;
 //			Enchere enchereEnCours = EnchereManager.getInstance().selectByIdArticle(idArticle);
-//		
+//			int montantEnchere = Enchere.
 //			System.out.println(enchere.getMontantEnchere());
 //			request.setAttribute("meilleureOffre", enchere.getMontantEnchere());
 //		
-//			String articleVenduByPseudo = ArticleVenduManager.getInstance().selectByUser()
+//			ArticleVendu articleVenduByPseudo = ArticleVenduManager.getInstance().selectByUser(id)
 //			
-//			if(articleVendu.getUtilisateur().getPseudo()) {
+//			if(articleVendu.getUtilisateur().getPseudo() != null) {
 //				articleVenduByPseudo = " no data found";
 //				request.setAttribute("pseudo", articleVendu.getUtilisateur().getPseudo());
 //			} else {
@@ -84,6 +87,8 @@ public class EnchereEnCoursServlet extends HttpServlet {
 			
 //			String pseudo = articleVendu.getUtilisateur().getPseudo();
 //			System.out.println("pseudo ca passe " + pseudo);
+			
+
 
 		} catch (BLLException e) {
 

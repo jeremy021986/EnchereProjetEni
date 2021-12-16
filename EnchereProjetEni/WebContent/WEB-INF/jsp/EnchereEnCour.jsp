@@ -64,41 +64,40 @@
 				</div>
 				<br>
 				<div class="container col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
-						<div class="form-example">
-							<label for="Article">Article :</label> 
+<div class="mt-3">
+							<label for="displayArticle">Article : <c:out value="${requestScope.article}"></c:out></label> 
 						</div>
 						
 						<br>
-						<label for="email">Description :</label> <input
-							type="text" name="description" id="description" required>
+						<label for="displayDescription">Description : <c:out value="${requestScope.description}"></c:out></label> 
 							
-						<br> <label class="mb-3" for="email">Categorie : </label>
+						<br> <label class="mt-3" for="text">Categorie : <c:out value="${requestScope.idCategorie}"></c:out></label>
 			
 					<div class="mt-3">
-						<label for="mMeilleureOffre">Meilleure offre:</label> 
+						<label for="displayMeilleureOffre">Meilleure offre: <c:out value="${requestScope.meilleureOffre}"></c:out></label>
 					</div>
 					  
 					<div class="mt-3">
-						<label for="mMiseAPrix">Mise à prix :</label> 
+						<label for="mMiseAPrix">Mise à prix : <c:out value="${requestScope.prixInitial}"></c:out></label> 
 					</div>
 					
 					<div class="mt-3">	
 						<label
-						for="finEnchere">Fin de l'enchère:</label> 
+						for="finEnchere">Fin de l'enchère: <c:out value="${requestScope.dateFinEnchere}"></c:out></label> 
 					</div>
 					
 					<label class="mt-3" for="start">Retrait: </label>
 					<br>
 					
-					<label class="mt-3" for="start">Vendeur : </label>
+					<label class="mt-3" for="start">Vendeur : <c:out value="${requestScope.pseudo}"></c:out></label>
 					
 					<div class="input-field mt-3">
 					<form action="" method="get" class="miseaprix">
-						<label for="mPrix">Ma proposition:</label> <input class="input"
-							type="number" name="minPrix" id="maxPrix" step="5" max="10000"
+						<label for="mPrix">Ma proposition:</label> <input class="number"
+							type="number" name="enchereProposition" id="enchereProposition" value="${requestScope.enchereProposee}" step="5" max="10000"
 							required>
 					</form>
-							<a href="#"><button type="submit" class="btn btn- mt-3 col-xs-12 col-sm-12 col-md-4 col-lg-4" style="background-color: #8E806A;"
+							<a href="#"><button type="submit" class="btn btn-success mt-3 col-xs-12 col-sm-12 col-md-4 col-lg-4"
 									name="sEncherir">Enchérir</button></a> 
 					</div>
 				</div>

@@ -1,27 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page import="java.util.List"%>
-<%@ page import="fr.eni.enchere.bo.Utilisateur"%>
-<%@ page import="java.time.format.FormatStyle"%>
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
-
-<title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Inscription</title>
 </head>
 <body>
-<body style="background-color: #F2EEE8;">
+<body style="background-color:#F2EEE8;">
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
 		<div class="container">
 			<a class="navbar-brand" href="PagePrincipale">Les objets sont nos amis</a>
@@ -49,51 +39,141 @@
 		</div>
 	</nav>
 
+<div class="container-fluid">
+<div class="container">
+<h1> ENI-Encheres</h1>
+	<p>Mon Profil</p>
+<div class="row">
+	
+	<form method="post" action="./PageInscription">
 
-	<div class="d-grid gap-2 col-2 mx-auto">
+	<div class="container-fluid">
+	<div class="row">
+	  	<div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	      <label for="inputPseudo"><strong>Pseudo:</strong></label>
+	      
+	    </div>
+	   <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	      <label for="inputpseudo"><c:out value="${sessionScope.pseudo}" /></label>
+	    </div>
+	    </div>
+    </div>
+  
+  <br>
 
-		<h5>Pseudo :</h5>
-		<c:out value="${sessionScope.pseudo}" />
+  <div class="container-fluid">
+  <div class="row">
+    <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <label for="inputPrenom"><strong>Nom:</strong></label>
+    </div>
+    <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <c:out value="${requestScope.nom}" />
+    </div>
+    </div>
+  </div>
+  <br>
 
-		<h5>Nom :</h5>
-		<c:out value="${requestScope.nom}" />
+  <div class="container-fluid">
+  <div class="row">
+    <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <label for="inputTelephone"><strong>Prénom:</strong></label>
+    </div>
+    <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+  		<c:out value="${requestScope.prenom}" />
+    </div>
+    </div>
+  </div>
+  
+  <br>
 
-		<h5>Prénom :</h5>
-		<c:out value="${requestScope.prenom}" />
+  <div class="container-fluid">
+  <div class="row">
+	    <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	      <label for="inputCP"><strong>Email:</strong></label>
+	    </div>
+	    <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	     	<c:out value="${requestScope.email}" />
+	    </div>
+	    </div>
+  </div>
+  
+  <br>
+   
+  <div class="container-fluid ">
+  <div class="row">
+	  <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	    <label for="inputPassword"><strong>Téléphone:</strong></label>
+	  </div>
+	  
+	  <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	    <c:out value="${requestScope.tel}" />
+	  </div>
+	  </div>
+  </div>
+  <br>
+  
+    <div class="container-fluid">
+  <div class="row">
+	  <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	    <label for="inputPassword"><strong>Rue:</strong></label>
+	  </div>
+	  
+	  <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	    <c:out value="${requestScope.rue}" />
+	  </div>
+	  </div>
+  </div>
+  
+  <br>
+  
+      <div class="container-fluid">
+  <div class="row">
+	  <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	    <label for="inputPassword"><strong>Code Postal:</strong></label>
+	  </div>
+	  
+	  <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+	    <c:out value="${requestScope.cp}" />
+	  </div>
+	  </div>
+  </div>
+  
+  <br>
+        <div class="container-fluid">
+  <div class="row">
+	  <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	    <label for="inputPassword"><strong>Ville:</strong> 	</label>
+	  </div>
+	  
+	  <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	    <c:out value="${requestScope.ville}" />
+	  </div>
+	  </div>
+  </div>
+  
+  <br>
 
-		<h5>Email :</h5>
-		<c:out value="${requestScope.email}" />
-		
-		<h5>Téléphone :</h5>
-		<c:out value="${requestScope.tel}" />
-
-		<h5>Rue :</h5>
-		<c:out value="${requestScope.rue}" />
-
-		<h5>Code Postal :</h5>
-		<c:out value="${requestScope.cp}" />
-
-		<h5>Ville :</h5>
-		<c:out value="${requestScope.ville}" />
-		<br> <br> <br>
-	</div>
-
-	<div class="d-grid gap-1 col-2 mx-auto">
-		<a href="./ModifProfilUtilisateur"><button type="button"
-				class="btn btn-dark btn-block" style="background-color: #8E806A;">Modifier
-				mon profil</button></a> <br /> <a href="./PagePrincipale"><button
-				type="button" class="btn btn-dark btn-block"
-				style="background-color: #8E806A;">Retour</button></a>
-	</div>
-	<br>
-	<br>
-
-
-
-
-	<footer class="container-fluid p-2 text-white"
-		style="background-color: #E4CDA7;">
-		<div class="container text-center">&copy; 2021 copyright</div>
-	</footer>
+  <div class="container-fluid">
+  <div class="row">
+	  <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+	   	<button type="submit" class="btn btn-dark" style="background-color: #8E806A;">Créer</button>
+	  </div>
+	  
+	  </div>
+  </div>
+ <br>
+ </form>
+ 
+	    <a href="./accueil"><button type="submit" class="btn btn-dark" style="background-color: #8E806A;">Annuler</button></a>
+	  
+ </div>
+ </div>
+ </div>
+ <br>
+ <br>
+<br>
 </body>
-</html>
+<footer class="container-fluid p-2 text-white" style="background-color: #E4CDA7;">
+      <div class="container text-center">&copy; 2021–2021 copyright</div>
+ </footer>
+ </html>
