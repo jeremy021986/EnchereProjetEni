@@ -6,7 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,7 +100,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 			pStmt.setInt(1, nouvelArticle.getIdArticle());
 			pStmt.setString(2, nouvelArticle.getNomArticle());
 			pStmt.setString(3, nouvelArticle.getDescription());
-			pStmt.setTimestamp(4, Timestamp.valueOf(nouvelArticle.getDateDebutEnchere()));
+			pStmt.setTimestamp(4,Timestamp.valueOf(nouvelArticle.getDateDebutEnchere()));
 			pStmt.setTimestamp(5, Timestamp.valueOf(nouvelArticle.getDateFinEnchere()));
 			pStmt.setInt(6, nouvelArticle.getPrixInitial());
 			pStmt.setInt(7, nouvelArticle.getPrixVente());
