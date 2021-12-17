@@ -53,12 +53,13 @@
 				<div class="container col-xs-12 col-sm-12 col-md-4 col-lg-4">
 
 					<div class="card">
-						<img src="https://via.placeholder.com/200x80/ccc/444"
+						<img src="https://www.backmarket.fr/cdn-cgi/image/format=auto,quality=75,width=1920/https://d1eh9yux7w8iql.cloudfront.net/product_images/38738_32114a1d-ed97-4938-8daf-5fb6a064a870.jpg"
 							class="card-img-top" alt="lorem" />
 						<div class="card-body">
-							<h5 class="card-title">Article n°3</h5>
-							<p class="card-text">Some quick example text to build on the
-								card title and make up the bulk of the card's content.</p>
+							<h5 class="card-title">Gameboy Color</h5>
+							<p class="card-text">Super Gameboy color qui a bercé mon enfance<br>
+								marche toujours super bien depuis 20 ans<br>
+								vendu sans piles</p>
 						</div>
 					</div>
 				</div>
