@@ -11,6 +11,39 @@
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
+      <div class="container">
+        <a class="navbar-brand" href="PagePrincipale"><img src="logo_enchere.png" height="50" width="90" ></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- ms-auto = margin-left:auto -->
+          <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="accueil">Accueil</a>
+           </li>
+           <li class="nav-item">
+              <a class="nav-link" href="#">Profil</a>
+           </li>
+          
+             
+           <li class="nav-item">
+              <a class="nav-link" href="PageConnexion">S'inscrire / Se connecter</a>
+           </li>
+           
+         </ul>
+      </div>
+   </div>
+</nav>
 <body style="background-color:#F2EEE8;">
 <h1> ENI-Encheres</h1>
  <p>Detail vente</p>

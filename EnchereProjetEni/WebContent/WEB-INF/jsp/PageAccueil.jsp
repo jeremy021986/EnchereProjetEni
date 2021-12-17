@@ -16,36 +16,26 @@
 </head>
 <body>
 <body style="background-color:#F2EEE8;">
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
-<div class="container">
-<a class="navbar-brand" href="#" >
-<object data="logo.svg" type="image/svg+xml">
-<img id ="logo"
-src="/EnchereTest/WebContent/WEB-INF/img/logo.svg"
-width="50" height="50">
-</object>
-</a>
-	
-		
-			<a class="navbar-brand" href="#">Les objets sont nos amis</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<!-- ms-auto = margin-left:auto -->
-				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="accueil">Accueil</a></li>
-					
-					<li class="nav-item"><a class="nav-link" href="PageConnexion">S'inscrire
-							/ Se connecter</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
+        <div class="container">
+            <a class="navbar-brand" href="PagePrincipale"><img src="logo_enchere.png" height="50" width="90" ></a>
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- ms-auto = margin-left:auto -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active"
+                        aria-current="page" href="accueil">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="PageConnexion">S'inscrire
+                            / Se connecter</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 <br>
 <br>
@@ -59,18 +49,18 @@ width="50" height="50">
 
 			<div class="row justify-content-around">
 
-				<div class="container col-xs-12 col-sm-12 col-md-4 col-lg-4">
-
-					<div class="card">
-						<img src="https://via.placeholder.com/200x80/ccc/444"
-							class="card-img-top" alt="lorem" />
-						<div class="card-body">
-							<h5 class="card-title">Article n°3</h5>
-							<p class="card-text">Some quick example text to build on the
-								card title and make up the bulk of the card's content.</p>
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<!-- cards  ici-->
+						<div class="card">
+							<img src="https://media.ldlc.com/r1600/ld/products/00/05/71/99/LD0005719939_1.jpg"
+								class="card-img-top" alt="lorem" height="300" width="200" />
+							<div class="card-body">
+								<h5 class="card-title">Carte graphique RTX 3090 TI</h5>
+								<p class="card-text">arte graphique RTX 3090 TI fonctionne super bien. Encore sous garantie constructeur (vendu avec facture), emballé avec carton et papier bulle.</p>
+								<a href="#" class="btn btn-primary">Voir l'article</a>
+							</div>
 						</div>
 					</div>
-				</div>
 				<br>
 
 				<div class="container col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">

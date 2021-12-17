@@ -17,7 +17,7 @@
 <body style="background-color:#F2EEE8;">
 		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
 		<div class="container">
-			<a class="navbar-brand" href="PagePrincipale">Les objets sont nos amis</a>
+			<a class="navbar-brand" href="PagePrincipale"><img src="logo_enchere.png" height="50" width="90" ></a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
 				aria-controls="navbarNav" aria-expanded="false"

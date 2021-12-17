@@ -18,7 +18,7 @@
 <body style="background-color:#F2EEE8;">
 	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
 		<div class="container">
-			<a class="navbar-brand" href="PagePrincipale">Les objets sont nos amis</a>
+			<a class="navbar-brand" href="PagePrincipale"><img src="logo_enchere.png" height="50" width="90" ></a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
 				aria-controls="navbarNav" aria-expanded="false"
@@ -115,12 +115,28 @@
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<!-- cards  ici-->
 						<div class="card">
-							<img src="https://via.placeholder.com/200x80/ccc/444"
-								class="card-img-top" alt="lorem" />
+							<img src="https://www.backmarket.fr/cdn-cgi/image/format=auto,quality=75,width=1920/https://d1eh9yux7w8iql.cloudfront.net/product_images/38738_32114a1d-ed97-4938-8daf-5fb6a064a870.jpg"
+								class="card-img-top" alt="Gameboy" height="300" width="200"/>
 							<div class="card-body">
-								<h5 class="card-title">Article n°1</h5>
-								<p class="card-text">Some quick example text to build on the
-									card title and make up the bulk of the card's content.</p>
+								<h5 class="card-title">Gameboy Color</h5>
+								<p class="card-text">Super Gameboy color qui a bercé mon enfance<br>
+								marche toujours super bien depuis 20 ans<br>
+								vendu sans piles</p>
+								<a href="#" class="btn btn-primary">Voir l'article</a>
+							</div>
+						</div>
+					</div>
+					<br>
+					<br>
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<!-- cards  ici-->
+						<div class="card">
+							<img src="https://media.paruvendu.fr/image/planche-surf-shortboard/WB16/1/0/WB161044589_1.jpeg"
+								class="card-img-top" alt="lorem" height="300" width="200"/>
+							<div class="card-body">
+								<h5 class="card-title">Planche de surf</h5>
+								<p class="card-text">Planche de surf de la marque : ShortBoard.<br>
+								Acheté il y a 4 ans, je la mets à disposition car, j'en ai acquis une nouvelle depuis</p>
 								<a href="#" class="btn btn-primary">Go to article</a>
 							</div>
 						</div>
@@ -130,28 +146,12 @@
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<!-- cards  ici-->
 						<div class="card">
-							<img src="https://via.placeholder.com/200x80/ccc/444"
-								class="card-img-top" alt="lorem" />
+							<img src="https://media.ldlc.com/r1600/ld/products/00/05/71/99/LD0005719939_1.jpg"
+								class="card-img-top" alt="lorem" height="300" width="200" />
 							<div class="card-body">
-								<h5 class="card-title">Article n°2</h5>
-								<p class="card-text">Some quick example text to build on the
-									card title and make up the bulk of the card's content.</p>
-								<a href="#" class="btn btn-primary">Go to article</a>
-							</div>
-						</div>
-					</div>
-					<br>
-					<br>
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-						<!-- cards  ici-->
-						<div class="card">
-							<img src="https://via.placeholder.com/200x80/ccc/444"
-								class="card-img-top" alt="lorem" />
-							<div class="card-body">
-								<h5 class="card-title">Article n°3</h5>
-								<p class="card-text">Some quick example text to build on the
-									card title and make up the bulk of the card's content.</p>
-								<a href="#" class="btn btn-primary">Go to Article</a>
+								<h5 class="card-title">Carte graphique RTX 3090 TI</h5>
+								<p class="card-text">arte graphique RTX 3090 TI fonctionne super bien. Encore sous garantie constructeur (vendu avec facture), emballé avec carton et papier bulle.</p>
+								<a href="#" class="btn btn-primary">Voir l'article</a>
 							</div>
 						</div>
 					</div>

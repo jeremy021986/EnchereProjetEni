@@ -18,7 +18,7 @@
 <body style="background-color:#F2EEE8;">
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
       <div class="container">
-        <a class="navbar-brand" href="#">Les objets sont nos amis</a>
+        <a class="navbar-brand" href="PagePrincipale"><img src="logo_enchere.png" height="50" width="90" ></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -35,12 +35,7 @@
           <ul class="navbar-nav ms-auto">
            <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="accueil">Accueil</a>
-           </li>
-           <li class="nav-item">
-              <a class="nav-link" href="#">Profil</a>
-           </li>
-          
-             
+           </li>   
            <li class="nav-item">
               <a class="nav-link" href="PageConnexion">S'inscrire / Se connecter</a>
            </li>
