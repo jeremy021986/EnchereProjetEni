@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -81,7 +82,13 @@ public class PublicationVenteServlet extends HttpServlet {
 			articleAjoute.setNomArticle(nom);
 			articleAjoute.setDescription(description);
 
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+//			LocalDateTime dateFinEnchere = articleVendu.getDateFinEnchere();
+//			System.out.println("dateFinEnchere ca passe " + dateFinEnchere);
+//			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.FRENCH);
+//			String formatDateTime = dateFinEnchere.format(formatter);
+//			request.setAttribute("dateFinEnchere", formatDateTime);
+			
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.FRENCH);
 			// convert String to LocalDate
 			LocalDateTime startEnchere = LocalDateTime.parse(debutEnchere, formatter);
 			LocalDateTime endEnchere = LocalDateTime.parse(finEnchere, formatter);

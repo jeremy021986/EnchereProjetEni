@@ -16,8 +16,17 @@
 </head>
 <body>
 <body style="background-color:#F2EEE8;">
-	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
-		<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E4CDA7;">
+<div class="container">
+<a class="navbar-brand" href="#" >
+<object data="logo.svg" type="image/svg+xml">
+<img id ="logo"
+src="/EnchereTest/WebContent/WEB-INF/img/logo.svg"
+width="50" height="50">
+</object>
+</a>
+	
+		
 			<a class="navbar-brand" href="#">Les objets sont nos amis</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -27,7 +36,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<!-- ms-auto = margin-left:auto -->
-				<ul class="navbar-nav ms-auto">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="accueil">Accueil</a></li>
 					

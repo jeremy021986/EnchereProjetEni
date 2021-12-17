@@ -97,8 +97,8 @@
 							type="number" name="enchereProposition" id="enchereProposition" value="${requestScope.enchereProposee}" step="5" max="10000"
 							required>
 					</form>
-							<a href="#"><button type="submit" class="btn btn-success mt-3 col-xs-12 col-sm-12 col-md-4 col-lg-4"
-									name="sEncherir">Enchérir</button></a> 
+							<a href="#"><button type="submit" class="btn btn-dark mt-3 col-xs-12 col-sm-12 col-md-4 col-lg-4" style="background-color: #8E806A;"
+									name="Encherir">Enchérir</button></a> 
 					</div>
 				</div>
 			</div>

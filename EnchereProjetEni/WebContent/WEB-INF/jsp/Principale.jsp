@@ -101,7 +101,7 @@
 						<input type="text" class="search"
 							placeholder="Le nom de l'article contient"> <br>
 						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-							<button type="submit" style="background-color: #8E806A;" >Rechercher</button>
+							<button type="submit" class="btn btn-dark mt-3" style="background-color: #8E806A;" >Rechercher</button>
 						</div>
 					</div>
 				</div>
