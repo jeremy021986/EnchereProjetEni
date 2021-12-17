@@ -44,8 +44,10 @@
 	</nav>
 	<div class="container-fluid">
 		<div class="container">
-			<h2>ENI-ENCHERES</h2>
-			<p>Filtres:</p>
+			<br>
+			<br>
+			<h2>Filtres:</h2>
+			<br>
 			<div class="row">
 
 				<div class="container col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -122,7 +124,7 @@
 								<p class="card-text">Super Gameboy color qui a bercé mon enfance<br>
 								marche toujours super bien depuis 20 ans<br>
 								vendu sans piles</p>
-								<a href="#" class="btn btn-primary">Voir l'article</a>
+								<a href="PageConnexion" class="btn btn-primary">Voir l'article</a>
 							</div>
 						</div>
 					</div>
@@ -137,7 +139,7 @@
 								<h5 class="card-title">Planche de surf</h5>
 								<p class="card-text">Planche de surf de la marque : ShortBoard.<br>
 								Acheté il y a 4 ans, je la mets à disposition car, j'en ai acquis une nouvelle depuis</p>
-								<a href="#" class="btn btn-primary">Go to article</a>
+								<a href="PageConnexion" class="btn btn-primary">Go to article</a>
 							</div>
 						</div>
 					</div>
@@ -151,7 +153,7 @@
 							<div class="card-body">
 								<h5 class="card-title">Carte graphique RTX 3090 TI</h5>
 								<p class="card-text">arte graphique RTX 3090 TI fonctionne super bien. Encore sous garantie constructeur (vendu avec facture), emballé avec carton et papier bulle.</p>
-								<a href="#" class="btn btn-primary">Voir l'article</a>
+								<a href="PageConnexion" class="btn btn-primary">Voir l'article</a>
 							</div>
 						</div>
 					</div>

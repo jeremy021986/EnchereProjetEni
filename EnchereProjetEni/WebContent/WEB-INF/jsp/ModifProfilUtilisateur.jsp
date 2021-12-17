@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Modif profil</title>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,12 +42,13 @@
 		</div>
 	</nav>
 <div class="container my-6 col-6 p-5">
-	<h1> ENI-Encheres</h1>
-<p>Mon Profil</p>
+	
+<h1>Modifier mon Profil</h1>
+<br>
 <form method="post" action="./ModifProfilUtilisateur">
 
-<div class="input-group col-4 py-4">
-	  	<div class="form-group col-my-4">
+<div class="input-group col-4 pb-2">
+	  	<div class="form-group col-my-4 px-3">
 	      <label for="inputPseudo">Pseudo:</label>
 	      <input type="text" class="form-control" id="modifPseudo" name="modifPseudo" value="${requestScope.pseudo}" required>
 	    </div>
@@ -59,8 +60,8 @@
   
   <br>
 
-  <div class="input-group">
-    <div class="form-group col-my-4">
+  <div class="input-group pb-2">
+    <div class="form-group col-my-4 px-3">
       <label for="inputModifPrenom">Prénom:</label>
       <input type="text" class="form-control" id="modifPrenom" name="modifPrenom" value="${requestScope.prenom}" required>
     </div>
@@ -72,8 +73,8 @@
   
   <br>
 
-  <div class="input-group">
-    <div class="form-group col-my-4">
+  <div class="input-group pb-2">
+    <div class="form-group col-my-4 px-3">
       <label for="inputModifTel">Telephone:</label>
       <input type="tel" class="form-control" id="modifTel" name="modifTel" value="${requestScope.tel}" required>
     </div>
@@ -85,8 +86,8 @@
   
   <br>
 
-  <div class="input-group">
-	    <div class="form-group col-my-4">
+  <div class="input-group pb-3">
+	    <div class="form-group col-my-4 px-3">
 	      <label for="inputModifCP">Code postal:</label>
 	      <input type="number" class="form-control" id="modifCp" name="modifCp" value="${requestScope.cp}" required>
 	    </div>
@@ -96,16 +97,16 @@
 	    </div>
   </div>
   
-	<div class="input-group">
-		<div class="form-group col-my-4">
+	<div class="input-group pb-3">
+		<div class="form-group col-my-4 px-3">
 			<label for="inputCurMDP">Mot de passe actuel:</label>
 			<input type="password" class="form-control" id="mdpActuel" name="mdpActuel" value="${requestScope.mdp}" required>
 		</div>
 	</div>
 
   
-	<div class="input-group">
-		<div class="form-group col-my-4">
+	<div class="input-group pb-3">
+		<div class="form-group col-my-4 px-3">
 			<label for="inputNewMDP">Nouveau mot de passe:</label>
 			<input type="password" class="form-control" id="modifMdp" name="modifMdp" value="${requestScope.mdp}" required>
 		</div>
@@ -117,7 +118,7 @@
     <br>
     <div>Crédit:${requestScope.credit}</div>
     <br>
-    <div class="input-group">
+    <div class="input-group pb-3">
 		<div class="form-group col-my-4">
 			   	<button type="submit" class="btn btn-dark" style="background-color: #8E806A;" name="sEnregistrer">Enregistrer</button>
 		</div>

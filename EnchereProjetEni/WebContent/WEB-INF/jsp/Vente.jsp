@@ -52,7 +52,7 @@
 	<div class="container-fluid">
 		<!-- Container pour le bloc ARticle, description, catégorie photo -->
 		<div class="container">
-			<h1>ENI-Encheres</h1>
+			
 			<h2 class="text-center">Nouvelle Vente</h2>
 			<br> <br>
 			<div class="row justify-content-around">
@@ -122,7 +122,7 @@
 							<label for=codepostal>Code postal</label> <input id=cp
 								name=cp type=text value="${requestScope.cp}" required>
 						</div>
-						<div class="form-example mt-3">
+						<div class="form-example mt-3 pb-3">
 							<label for="ville">Ville : </label> <input type="text"
 								name="ville" id="ville" value="${requestScope.ville}" required>
 						</div>
@@ -130,7 +130,7 @@
 									name="Enregistrer">Enregistrer</button>
 					</form>
 					<br>
-					<div class="container col-xs-12 col-sm-12 col-md-6 col-lg-6">
+					<div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="row">
 
 							

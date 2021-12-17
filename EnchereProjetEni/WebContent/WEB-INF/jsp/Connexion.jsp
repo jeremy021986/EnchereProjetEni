@@ -46,7 +46,7 @@
 </nav>
 
 <div class="container my-6 col-6 p-5">
-	<h1>ENI-Encheres</h1>
+	
 	<main class="form-signin">
 		<form action="./PageConnexion" method="post">
 		<c:if test="${mdpValide != null && mdpValide == false}">
@@ -101,6 +101,8 @@
 
 	<br>
 	<br>
+	<br>
+		<br>
 	<br>
 	
 	

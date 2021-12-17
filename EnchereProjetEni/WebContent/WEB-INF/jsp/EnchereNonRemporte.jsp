@@ -45,7 +45,7 @@
    </div>
 </nav>
 <body style="background-color:#F2EEE8;">
-<h1> ENI-Encheres</h1>
+
  <p>Detail vente</p>
 
  <div class="w3-card-4">

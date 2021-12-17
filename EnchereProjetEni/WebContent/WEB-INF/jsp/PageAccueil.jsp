@@ -56,7 +56,7 @@
 							<div class="card-body">
 								<h5 class="card-title">Carte graphique RTX 3090 TI</h5>
 								<p class="card-text">arte graphique RTX 3090 TI fonctionne super bien. Encore sous garantie constructeur (vendu avec facture), emballé avec carton et papier bulle.</p>
-								<a href="#" class="btn btn-primary">Voir l'article</a>
+								<a href="PageConnexion" class="btn btn-primary">Voir l'article</a>
 							</div>
 						</div>
 					</div>
@@ -95,12 +95,6 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 
 </body>
 <footer  class="text-center text-dark" style="background-color: #E4CDA7;">

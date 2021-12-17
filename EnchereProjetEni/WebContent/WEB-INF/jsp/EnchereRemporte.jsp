@@ -47,7 +47,7 @@
             </div>
         </div>
     </nav>
-    <h1> ENI-Encheres</h1>
+    
     <h3>Vous avez remporté la vente</h3>
 
 

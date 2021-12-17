@@ -45,9 +45,7 @@
    </div>
 </nav>
 <div class="container my-6 col-6 p-5">
-	<h1>ENI-Encheres</h1>
-
-
+	
     <h4>Pseudo :</h4>
     <h4>Nom :</h4>
     <h4>Prénom :</h4>

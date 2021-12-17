@@ -43,7 +43,7 @@
 	<div class="container-fluid">
 		<!-- Container pour le bloc ARticle, description, catégorie photo -->
 		<div class="container">
-			<h1>ENI-Encheres</h1>
+			<
 			<h2 class="text-center">Nouvelle Vente</h2>
 			<br> <br>
 			<div class="row justify-content-around">

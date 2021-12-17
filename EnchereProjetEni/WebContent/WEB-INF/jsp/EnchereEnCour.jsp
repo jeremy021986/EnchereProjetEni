@@ -45,7 +45,7 @@
 	<div class="container-fluid">
 		<!-- Container pour le bloc ARticle, description, catégorie photo -->
 		<div class="container">
-			<h1>ENI-Encheres</h1>
+			<br>
 			<h2 class="text-center">Détail Vente</h2>
 			<br> <br>
 			<div class="row justify-content-around">
@@ -65,31 +65,31 @@
 				<br>
 				<div class="container col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
 <div class="mt-3">
-							<label for="displayArticle">Article : <c:out value="${requestScope.article}"></c:out></label> 
+							<label for="displayArticle">Article : <strong><c:out value="${requestScope.article}"></c:out></strong></label> 
 						</div>
 						
 						<br>
-						<label for="displayDescription">Description : <c:out value="${requestScope.description}"></c:out></label> 
+						<label for="displayDescription">Description : <strong><c:out value="${requestScope.description}"></c:out></strong></label> 
 							
-						<br> <label class="mt-3" for="text">Categorie : <c:out value="${requestScope.idCategorie}"></c:out></label>
+						<br> <label class="mt-3" for="text">Categorie : <strong><c:out value="${requestScope.idCategorie}"></c:out></strong></label>
 			
 					<div class="mt-3">
-						<label for="displayMeilleureOffre">Meilleure offre: <c:out value="${requestScope.meilleureOffre}"></c:out></label>
+						<label for="displayMeilleureOffre">Meilleure offre: <strong><c:out value="${requestScope.meilleureOffre}"></c:out></strong></label>
 					</div>
 					  
 					<div class="mt-3">
-						<label for="mMiseAPrix">Mise à prix : <c:out value="${requestScope.prixInitial}"></c:out></label> 
+						<label for="mMiseAPrix">Mise à prix : <strong><c:out value="${requestScope.prixInitial}"></c:out></strong></label> 
 					</div>
 					
 					<div class="mt-3">	
 						<label
-						for="finEnchere">Fin de l'enchère: <c:out value="${requestScope.dateFinEnchere}"></c:out></label> 
+						for="finEnchere">Fin de l'enchère: <strong><c:out value="${requestScope.dateFinEnchere}"></c:out></strong></label> 
 					</div>
 					
 					<label class="mt-3" for="start">Retrait: </label>
 					<br>
 					
-					<label class="mt-3" for="start">Vendeur : <c:out value="${requestScope.pseudo}"></c:out></label>
+					<label class="mt-3" for="start">Vendeur : <strong><c:out value="${requestScope.pseudo}"></c:out></strong></label>
 					
 					<div class="input-field mt-3">
 					<form action="" method="get" class="miseaprix">
@@ -105,7 +105,9 @@
 		</div>
 	</div>
 
-
+<br>
+<br>
+<br>
 
 
 </body>
